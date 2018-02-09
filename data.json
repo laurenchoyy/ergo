@@ -20,5 +20,32 @@
 			"className" : "outdoor",
 			"background" : ""
 		}
+	],
+	"stretches" : [
+		{
+			"title" : "Stretch Title",
+			"target" : "Body part targeted",
+			"time" : "20 min"
+		},
+		{
+			"title" : "Stretch Title",
+			"target" : "Body part targeted",
+			"time" : "20 min"
+		},
+		{
+			"title" : "Stretch Title",
+			"target" : "Body part targeted",
+			"time" : "20 min"
+		},
+		{
+			"title" : "Stretch Title",
+			"target" : "Body part targeted",
+			"time" : "20 min"
+		},
+		{
+			"title" : "Stretch Title",
+			"target" : "Body part targeted",
+			"time" : "20 min"
+		}
 	]
 }

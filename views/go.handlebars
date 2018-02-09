@@ -2,7 +2,7 @@
 <head>
 	<!-- meta tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Ergo</title>
+	<title>Go! - Ergo</title>
 	<!-- Bootstrap CDN -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- Bootstrap 
@@ -12,7 +12,7 @@
 	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-<div id="home-page">
+<div id="go-page">
 
 	<div id="header">
 		<div class="container">
@@ -32,7 +32,7 @@
 			<div class="wrapper">
 				<div class="row">
 					<div class="col-6">
-						<h3>Get Started</h3>
+						<h3><a href="/">Get Started</a></h3>
 					</div>
 					<div class="col-6">
 						<h3><a href="/favorites">Favorites</a></h3>
@@ -42,50 +42,22 @@
 		</div>
 	</div> <!-- #tabs -->
 
-	<div id="progress">
-		<div class="container d-flex justify-content-center">
-			<div class="progress">
-		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+
+	<div id="go">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h3 class="timer">05:03</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h3><a href="/">Stop</a></h3>
+				</div>
 			</div>
 		</div>
-	</div> <!-- #progress -->
-
-	<div id="get-started">
-		<div class="container-fluid">
-			<div class="row start">
-				<div class="col-12">
-					<h2>Where are you working today?</h2>
-				</div>
-			</div>
-			<div class="row environment-container">
-				{{#each environments}}
-				<div class="col-6">
-					<a href="/stretches">
-					<div class="environment {{className}} bg-primary">
-				
-						<!-- <div class="bg"><img src="{{background}}"></div> -->
-						<div class="wrapper d-flex align-items-center justify-content-center">
-							<h3 class="environment-name">{{name}}</h3>
-						</div>
-
-					</div>
-					</a>
-					
-				</div>
-				{{/each}}
-			</div>
-			<div class="row friend-code">
-				<div class="col-12">
-					<h5>Have a friend code?</h5> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-
-					<form action="">
-						<input type="text" name="FriendCode">
-						<input type="submit" value="→">
-					</form>
-				</div>
-			</div>
-		</div> <!-- .environment-container -->
-	</div> <!-- #get-started -->
+	</div>
+	
 
 </div>
 </body>

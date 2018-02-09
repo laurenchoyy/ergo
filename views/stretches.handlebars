@@ -2,7 +2,7 @@
 <head>
 	<!-- meta tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Ergo</title>
+	<title>Stretches - Ergo</title>
 	<!-- Bootstrap CDN -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- Bootstrap 
@@ -12,7 +12,7 @@
 	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-<div id="home-page">
+<div id="stretches-page">
 
 	<div id="header">
 		<div class="container">
@@ -50,42 +50,43 @@
 		</div>
 	</div> <!-- #progress -->
 
-	<div id="get-started">
-		<div class="container-fluid">
-			<div class="row start">
-				<div class="col-12">
-					<h2>Where are you working today?</h2>
-				</div>
-			</div>
-			<div class="row environment-container">
-				{{#each environments}}
-				<div class="col-6">
-					<a href="/stretches">
-					<div class="environment {{className}} bg-primary">
-				
-						<!-- <div class="bg"><img src="{{background}}"></div> -->
-						<div class="wrapper d-flex align-items-center justify-content-center">
-							<h3 class="environment-name">{{name}}</h3>
-						</div>
+	<div id="stretches">
+		
+		<div class="container">
+			<h2>Stretches</h2>
+		</div>
+		<div class="container">
+			{{#each stretches}}
+				<ul>
+					<li class="bg-primary">
 
+						<h4>{{title}}</h4>
+					<p>{{target}} • {{time}}</p>
+					<div class="expand-stretch">
+						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 					</div>
+					</li>
+				</ul>
+			{{/each}}
+		</div>
+	</div>
+	
+	<div id="pagination">
+		<div class="container">
+			<div class="wrapper d-flex justify-content-between align-items-center">
+				<div class="back-button">
+					<a href="/">
+					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</a>
-					
 				</div>
-				{{/each}}
-			</div>
-			<div class="row friend-code">
-				<div class="col-12">
-					<h5>Have a friend code?</h5> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-
-					<form action="">
-						<input type="text" name="FriendCode">
-						<input type="submit" value="→">
-					</form>
+				<div class="forward-button">
+					<a href="/start">
+					<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+					</a>
 				</div>
 			</div>
-		</div> <!-- .environment-container -->
-	</div> <!-- #get-started -->
+		</div>
+	</div> <!-- #pagination -->
 
 </div>
 </body>
