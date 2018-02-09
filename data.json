@@ -1,0 +1,24 @@
+{
+	"environments" : [
+		{
+			"name" : "Office Space",
+			"className" : "office",
+			"background" : ""
+		},
+		{
+			"name" : "Home",
+			"className" : "home",
+			"background" : ""
+		},
+		{
+			"name" : "Indoor",
+			"className" : "indoor",
+			"background" : ""
+		},
+		{
+			"name" : "Outdoor",
+			"className" : "outdoor",
+			"background" : ""
+		}
+	]
+}

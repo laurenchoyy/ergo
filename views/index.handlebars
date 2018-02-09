@@ -1,8 +1,86 @@
-<html>
+<!DOCTYPE html>
 <head>
-	<title>Test Page</title>
+	<!-- meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Ergo</title>
+	<!-- Bootstrap CDN -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Bootstrap 
+	<link href="css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-Begin here (or replace this with any static code already written).
+<div id="home">
+
+	<div id="header">
+		<div class="container">
+			<div class="d-flex flex-column align-items-center justify-content-center wrapper">
+				<div class="login align-self-start"><h4><a href="#">Login</a></h4></div>
+				<a href="/">
+				<div class="logo-container bg-primary">
+					<img src="" alt="Ergo logo">
+				</div>
+				</a>
+			</div> <!-- .wrapper -->
+		</div> <!-- .container -->
+	</div> <!-- #header -->
+
+	<div id="tabs">
+		<div class="container-fluid">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-6">
+						<h2><a href="#">Get Started</a></h2>
+					</div>
+					<div class="col-6">
+						<h2><a href="#">Favorites</a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- #tabs -->
+
+	<div id="progress">
+		<div class="container d-flex justify-content-center">
+			<div class="progress">
+		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
+	</div> <!-- #progress -->
+
+	<div id="home">
+		<div class="container-fluid">
+			<div class="row friend-code">
+				<div class="col-12">
+					<h5>Have a friend code?</h5> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+
+					<form action="">
+						<input type="text" name="FriendCode">
+						<input type="submit" value="→">
+					</form>
+				</div>
+			</div>
+			<div class="row start">
+				<div class="col-12">
+					<h3>Where are you working today?</h3>
+				</div>
+			</div>
+			<div class="row environment-container">
+				{{#each environments}}
+				<div class="col-6">
+					<div class="environment {{className}} bg-primary">
+						<div class="bg"><img src="{{background}}"></div>
+						<div class="wrapper d-flex align-items-center justify-content-center">
+							<h3 class="environment-name">{{name}}</h3>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div> <!-- .environment-container -->
+	</div> <!-- #home -->
+</div>
 </body>
 </html>

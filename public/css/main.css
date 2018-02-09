@@ -1,0 +1,124 @@
+
+
+html,body {
+	font-size: 62.5%;
+	height: 100%;
+	/*
+	-webkit-font-smoothing: antialiased; */
+}
+
+
+
+
+#home {
+	text-align: center;
+}
+
+#header {
+	
+	background-color: #f7f7f7;
+}
+
+#header .wrapper {
+	height: 7rem;
+}
+
+.logo-container {
+	border-radius: 4rem;
+	margin-top: -4rem;
+	overflow: hidden;
+	background-color: #fff;
+	height: 4rem;
+	width: 4rem;
+}
+
+.logo-container img {
+	display: none;
+}
+
+#tabs {
+	text-align: center;
+}
+
+#tabs .wrapper {
+	height: 7.5rem;
+
+	margin-top: 1rem;
+}
+
+[class*="col-"] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+#progress {
+	width: 100%;
+	margin: 3rem 0;
+	height: .5rem;
+}
+
+.progress {
+	width: 30rem;
+	max-width: 80vw;
+	height: .5rem;
+}
+
+
+#home .progress-bar {
+	width: 33.33%;
+}
+
+.friend-code {
+	height: 6rem;
+}
+
+.friend-code h5 {
+	display: inline;
+
+}
+
+.friend-code form {
+	margin-top: 1rem;
+}
+
+.environment-container {
+	/* TODO Fill height after fixing header height */
+	height: 30vh;
+	margin-top: 3rem;
+}
+
+
+.environment {
+	height: 100%;
+	min-height: 10rem;
+	color: #fff;
+	cursor: pointer;
+	background-color: #f7f7f7;	
+}
+
+.environment .bg {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+	display: none;
+}
+
+.environment .bg img {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.environment .wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.environment-name {
+	
+}
+
+
+
