@@ -25,27 +25,30 @@
 		{
 			"title" : "Stretch Title",
 			"target" : "Body part targeted",
-			"time" : "20 min"
+			"time" : "20",
+			"description" : "Lorem ipsum",
+			"tags" : "office"
 		},
 		{
 			"title" : "Stretch Title",
 			"target" : "Body part targeted",
-			"time" : "20 min"
+			"time" : "20",
+			"description" : "Lorem ipsum",
+			"tags" : "office"
 		},
 		{
 			"title" : "Stretch Title",
 			"target" : "Body part targeted",
-			"time" : "20 min"
+			"time" : "20",
+			"description" : "Lorem ipsum",
+			"tags" : "office"
 		},
 		{
 			"title" : "Stretch Title",
 			"target" : "Body part targeted",
-			"time" : "20 min"
-		},
-		{
-			"title" : "Stretch Title",
-			"target" : "Body part targeted",
-			"time" : "20 min"
+			"time" : "20",
+			"description" : "Lorem ipsum",
+			"tags" : "office"
 		}
 	]
 }

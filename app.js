@@ -7,12 +7,14 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var exphbs  = require('express-handlebars');
 
-var index = require('./routes/index');
+
+var home = require('./routes/home');
 // Example route
 // var user = require('./routes/user');
-var stretches = require('./routes/stretches');
-var start = require('./routes/start');
+var setup = require('./routes/setup');
+var ready = require('./routes/ready');
 var go = require('./routes/go');
 var favorites = require('./routes/favorites');
 var login = require('./routes/login');
@@ -22,7 +24,11 @@ var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+//app.engine('handlebars', handlebars());
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -39,14 +45,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', home.view);
 // Example route
 // app.get('/users', user.list);
-app.get('/stretches', stretches.view);
-app.get('/start', start.view);
+app.get('/setup', setup.view);
+app.get('/ready', ready.view);
 app.get('/go', go.view);
 app.get('/favorites', favorites.view);
 app.get('/login', login.view);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

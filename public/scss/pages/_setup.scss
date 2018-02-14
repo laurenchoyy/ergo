@@ -1,0 +1,33 @@
+#stretches {
+	padding-bottom: 12rem;
+}
+
+#stretches ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 60rem;
+	max-width: 100%;
+	margin-top: 2rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#stretches li {
+	padding: 0.5rem 2rem;
+	text-align: left;
+	width: 100%;
+	color: #fff;
+	position: relative;
+}
+
+.expand-stretch {
+	position: absolute;
+	top: 3.2rem;
+	right: 2.2rem;
+}
+
+.expand-stretch span.glyphicon {
+	font-size: 3rem;
+	color: #fff;
+}

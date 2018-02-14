@@ -1,0 +1,22 @@
+#pagination {
+	position: absolute;
+	width: 100%;
+	height: 7rem;
+	bottom: 0;
+}
+
+#pagination .wrapper {
+	height: 100%;
+}
+
+#pagination span.glyphicon {
+	font-size: 3rem;
+}
+
+#start-page .forward-button {
+	visibility: hidden;
+}
+
+#home-page #pagination {
+	visibility: hidden;
+}

@@ -1,0 +1,25 @@
+/*
+ * Base styles
+ */
+
+html,body {
+	font-size: 62.5%;
+	min-height: 100%;
+	text-align: center;
+	/*
+	-webkit-font-smoothing: antialiased; */
+}
+
+body {
+	position: relative;
+}
+
+[class*="col-"] {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
+
+

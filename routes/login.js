@@ -6,5 +6,8 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-  res.render('login', data);
+  res.render('login', {
+  	data,
+  	"title" : "Login | Ergo"
+  });
 };

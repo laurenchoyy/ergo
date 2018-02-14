@@ -1,0 +1,36 @@
+#header {
+	text-align: center;
+	background-color: #f7f7f7;
+	padding: 1.5rem 0;
+}
+
+#header .wrapper {
+	height: 7rem;
+}
+
+.logo-container {
+	display: inline-block;
+	border-radius: 4rem;
+	overflow: hidden;
+	background-color: #fff;
+	height: 4rem;
+	width: 4rem;
+}
+
+.logo-container img {
+	display: none;
+}
+
+.login {
+	text-align: left;
+}
+
+#tabs {
+	text-align: center;
+}
+
+#tabs .wrapper {
+	height: 7.5rem;
+
+	margin-top: 1rem;
+}

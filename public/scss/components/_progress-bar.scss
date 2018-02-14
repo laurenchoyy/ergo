@@ -1,0 +1,24 @@
+#progress {
+	width: 100%;
+	margin: 3rem 0;
+	height: .5rem;
+}
+
+.progress {
+	width: 30rem;
+	max-width: 80vw;
+	height: .5rem;
+}
+
+
+#home-page .progress-bar {
+	width: 33.33%;
+}
+
+#stretches-page .progress-bar {
+	width: 66.66%;
+}
+
+#start-page .progress-bar {
+	width: 100%;
+}
