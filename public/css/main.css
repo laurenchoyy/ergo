@@ -11,10 +11,6 @@ html, body {
 body {
   position: relative; }
 
-[class*="col-"] {
-  padding: 0 !important;
-  margin: 0 !important; }
-
 button:focus, input:focus {
   outline: 0 !important; }
 
