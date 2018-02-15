@@ -23,32 +23,32 @@
 	],
 	"stretches" : [
 		{
-			"title" : "Stretch Title",
-			"target" : "Body part targeted",
-			"time" : "20",
-			"description" : "Lorem ipsum",
-			"tags" : "office"
+			"title" : "Seated Spinal Twist",
+			"target" : "Spine, chest, neck",
+			"time" : "15 sec",
+			"description" : "Sit up straight on your chair, place your feet on the ground and place your hands on the back of the chair. Using your arms, twist, pulling yourself toward the chair. Switch sides and repeat.",
+			"tags" : "office" "home"
 		},
 		{
-			"title" : "Stretch Title",
-			"target" : "Body part targeted",
-			"time" : "20",
-			"description" : "Lorem ipsum",
-			"tags" : "office"
+			"title" : "Neck Tilts",
+			"target" : "Neck",
+			"time" : "20 sec",
+			"description" : "Keep shoulders relaxed and arms hanging loosely. Tilt head sideways, first on one side for 5 seconds, then the other for 5 seconds.",
+			"tags" : "office" "home" "indoor" "outdoor"
 		},
 		{
-			"title" : "Stretch Title",
-			"target" : "Body part targeted",
-			"time" : "20",
-			"description" : "Lorem ipsum",
-			"tags" : "office"
+			"title" : "Cat/Cow Stretch",
+			"target" : "Back, shoulders, neck",
+			"time" : "20 sec",
+			"description" : "LWhile sitting, inhale, arch your back and look up, pulling your shoulders back as you do so. When you exhale, round your spine, pull the shoulders toward each other at the front of the body and drop your head toward your chest.",
+			"tags" : "office" "home" "indoor" "outdoor"
 		},
 		{
-			"title" : "Stretch Title",
-			"target" : "Body part targeted",
-			"time" : "20",
-			"description" : "Lorem ipsum",
-			"tags" : "office"
+			"title" : "Hand/Finger Stretch",
+			"target" : "Fingers",
+			"time" : "20 sec",
+			"description" : "Separate and then straighten your fingers. Hold for 10 seconds. Then bend fingers at knuckle and hold for 10 seconds. Separate and straighten again.",
+			"tags" : "office" "home" "indoor" "outdoor"
 		}
 	]
 }
