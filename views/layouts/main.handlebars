@@ -9,7 +9,16 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<!-- main.css -->
 	<link href="css/main.css" rel="stylesheet">
+	<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <!-- jQuery local fallback -->
+    <script>
+    if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
 </head>
 <body>
 	<div id="header">
@@ -33,14 +42,12 @@
 
 	<div id="tabs">
 		<div class="container-fluid">
-			<div class="wrapper">
-				<div class="row">
-					<div class="col-6">
-						<h3><a href="/">Get Started</a></h3>
-					</div>
-					<div class="col-6">
-						<h3><a href="/favorites">Favorites</a></h3>
-					</div>
+			<div class="row">
+				<div class="col">
+					<h3><a href="/">Get Started</a></h3>
+				</div>
+				<div class="col">
+					<h3><a href="/favorites">Favorites</a></h3>
 				</div>
 			</div>
 		</div>
@@ -48,10 +55,6 @@
 	
 		{{{body}}}
 
-	<script>
-	function goBack() {
-	    window.history.back();
-	}
-	</script>
+	<script src="js/main.js"></script>
 </body>
 </html>

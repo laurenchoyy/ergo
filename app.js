@@ -18,6 +18,7 @@ var ready = require('./routes/ready');
 var go = require('./routes/go');
 var favorites = require('./routes/favorites');
 var login = require('./routes/login');
+var signup = require('./routes/signup');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.get('/ready', ready.view);
 app.get('/go', go.view);
 app.get('/favorites', favorites.view);
 app.get('/login', login.view);
+app.get('/signup', signup.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){

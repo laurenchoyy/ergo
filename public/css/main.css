@@ -21,6 +21,11 @@ p {
 a:hover {
   text-decoration: none; }
 
+.warning {
+  color: red;
+  text-align: left;
+  font-size: 1.2rem; }
+
 #header {
   text-align: center;
   background-color: #f7f7f7;
@@ -127,6 +132,31 @@ a:hover {
 .environment .wrapper {
   height: 100%;
   width: 100%; }
+
+#login-page .row {
+  margin: 2rem 0; }
+
+.login-form {
+  max-width: 40rem; }
+  .login-form .input-group {
+    margin: 2rem 0; }
+
+#login-page .row {
+  margin: 2rem 0; }
+
+.login-form {
+  max-width: 40rem; }
+  .login-form .input-group {
+    margin: 2rem 0; }
+
+.why-phone {
+  cursor: pointer; }
+
+.why-phone-a {
+  text-align: left;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  display: none; }
 
 #stretches {
   padding-bottom: 12rem; }

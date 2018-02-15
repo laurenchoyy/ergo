@@ -6,13 +6,12 @@
 			<div class="row">
 				<div class="col">
 					<div class="d-flex justify-content-center">
-
 					<div class="login-form">
-					
+
 						<!-- Email -->
 						<div class="input-group input-group-lg">
-					  		<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-					  		<input name="email" type="text" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1">
+							<span class="input-group-addon" id="sizing-addon1">E-mail</span>
+							<input name="email" type="text" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1">
 						</div>
 						<p class="email-warning warning"></p>
 
@@ -22,19 +21,22 @@
 							<input name="password" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
 						</div>
 						<p class="password-warning warning"></p>
-					
-						<!-- Submit -->
-						<button type="submit" onclick="login()"  class="btn btn-default btn-block">Login</button>
+
+						<h5>Ergo sends alerts through SMS. Where can we reach you?</h5>
+						<!-- Phone -->
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon1">Phone</span>
+							<input name="phone" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1">
+						</div>
+						<p class="phone-warning warning"></p>
+
+						<!-- Sign Up button -->
+						<button type="button" onclick="signup()" class="btn btn-default btn-block">Sign Up</button>
 
 					</div> <!-- .login-form -->
-					
 					</div>
-				</div> <!-- .col -->
-			</div> <!-- .row -->
 
-			<div class="row">
-				<div class="col">
-					<h4>Don't have an account? <a href="/signup">Sign Up</a></h4>
+
 				</div>
 			</div>
 
