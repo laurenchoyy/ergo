@@ -101,46 +101,20 @@ a {
 #home-page #pagination {
   visibility: hidden; }
 
-.friend-code {
-  height: 6rem;
-  margin-top: 4rem; }
-
-.friend-code h5 {
-  display: inline; }
-
-.friend-code form {
-  margin-top: 1rem; }
-
-.environment-container {
-  /* TODO Fill height after fixing header height */
-  height: 30vh;
-  margin-top: 3rem; }
+#home-page h2 {
+  margin-bottom: 3rem; }
 
 .environment {
   height: 100%;
-  min-height: 10rem;
+  min-height: 15rem;
   color: #fff;
   cursor: pointer; }
-
-.environment h3 {
-  padding: 0;
-  margin: 0; }
-
-.environment .bg {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  overflow: hidden;
-  display: none; }
-
-.environment .bg img {
-  min-width: 100%;
-  min-height: 100%; }
-
-.environment .wrapper {
-  height: 100%;
-  width: 100%; }
+  .environment .wrapper {
+    height: 100%;
+    width: 100%; }
+  .environment h3 {
+    padding: 0;
+    margin: 0; }
 
 #login-page .row {
   margin: 2rem 0; }
