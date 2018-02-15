@@ -8,6 +8,8 @@ var data = require('../data.json');
 exports.view = function(req, res){
   res.render('login', {
   	data,
-  	"title" : "Login | Ergo"
+  	"title" : "Login | Ergo",
+  	"hideTabs" : true,
+  	"hideLogin" : true
   });
 };

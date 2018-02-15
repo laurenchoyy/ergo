@@ -2,16 +2,95 @@
 <div id="go-page">
 	<div id="go">
 		<div class="container">
+
 			<div class="row">
-				<div class="col-12">
-					<h3 class="timer">05:03</h3>
+				<div class="col" style="text-align: right">
+					<h2><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					
+
+
+					<div id="timer"><span id="min">00</span>:<span id="sec">00</span></div>
+
+					<!--
+					<input id="startButton" type="button" value="Start">
+					<input id="pauseButton" type="button" value="Pause">
+					<input id="resumeButton" type="button" value="Resume">
+					<input id="resetButton" type="button" value="Reset">
+					<input id="restartButton" type="button" value="Restart"> -->
+
+
+					<div class="btn-group" role="group" aria-label="...">
+
+					  <button id="startButton" class="btn btn-default" type="button" value="Start">Start</button>
+					<button id="pauseButton" class="btn btn-default" type="button" value="Pause">Pause</button>
+					<button id="resumeButton" class="btn btn-default" type="button" value="Resume">Resume</button>
+					<button id="resetButton" class="btn btn-default" type="button" value="Reset">Reset</button>
+					<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button>
+					</div>
+
+
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12">
-					<h3><a href="/">Stop</a></h3>
+				<div class="col">
+					<div class="d-flex justify-content-center">
+					<div class="curr-stretch-img">
+						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+					</div>
+					</div>
+
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col">
+
+				<div class="stretches-container">
+					
+					<div class="container">
+						<h3>Next Stretches</h3>
+					
+						<form id="stretch-form" action="/ready" method="get">
+
+						<ul>
+						{{#each todo}}
+							
+								<li class="stretch">
+									<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="0">
+								<!-- Icon -->
+								<div class="stretch-image">
+									<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+								</div> <!-- .stretch-image -->
+
+								<!-- Info -->
+								<div class="stretch-info">
+									<h5 class="text-primary">{{title}}</h5>
+									<p><i>{{target}} • {{time}}</i></p>
+								</div> <!-- .stretch-info -->
+
+								<!-- Expand button -->
+								<div class="expand-stretch">
+									<span class="chevron glyphicon glyphicon-chevron-down text-primary" aria-hidden="true"></span>
+								</div> <!-- .expand-stretch -->
+
+								<!-- Description -->
+								<p class="stretch-desc">{{description}}</p>
+								</li>
+								
+						{{/each}}
+						</ul>
+					</div>
+					
+				</div> <!-- .stretches-container -->
+
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>

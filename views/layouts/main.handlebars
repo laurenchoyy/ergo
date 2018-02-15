@@ -7,8 +7,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- Bootstrap 
 	<link href="css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet"> 
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> 
 	<!-- main.css -->
 	<link href="css/main.css" rel="stylesheet">
 	<!-- jQuery -->
@@ -25,7 +25,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="login align-self-start"><h4><a href="/login">Login</a></h4></div>
+					{{#unless data.loggedIn}}
+					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a href="/login">Login</a></h4></div>
+					{{/unless}}
+
+					{{#if data.loggedIn}}
+					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a href="/logout">Logout</a></h4></div>
+					{{/if}}
+
+					
 				</div>
 				<div class="col">
 					<a href="/">
@@ -40,7 +48,7 @@
 		</div> <!-- .container -->
 	</div>  <!-- #header -->
 
-	<div id="tabs">
+	<div id="tabs" style="{{#if hideTabs}}display: none;{{/if}}">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">

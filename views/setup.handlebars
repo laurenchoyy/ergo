@@ -1,5 +1,5 @@
 {{#with data}}
-<div id="stretches-page">
+<div id="setup-page">
 
 	<div id="progress">
 		<div class="container d-flex justify-content-center">
@@ -9,43 +9,62 @@
 		</div>
 	</div> <!-- #progress -->
 
-	<div id="stretches">
+	<div class="stretches-container">
 		
 		<div class="container">
 			<h2>Stretches</h2>
-		</div>
-		<div class="container">
-			{{#each stretches}}
-				<ul>
-					<li class="bg-primary">
+		
+			<form id="stretch-form" action="/go" method="get">
 
-						<h4>{{title}}</h4>
-					<p>{{target}} • {{time}}</p>
+			<ul>
+			{{#each stretches}}
+				
+					<li class="stretch">
+						<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="0">
+					<!-- Icon -->
+					<div class="stretch-image">
+						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+					</div> <!-- .stretch-image -->
+
+					<!-- Info -->
+					<div class="stretch-info">
+						<h5 class="text-primary">{{title}}</h5>
+						<p><i>{{target}} • {{time}}</i></p>
+					</div> <!-- .stretch-info -->
+
+					<!-- Expand button -->
 					<div class="expand-stretch">
-						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-					</div>
+						<span class="chevron glyphicon glyphicon-chevron-down text-primary" aria-hidden="true"></span>
+					</div> <!-- .expand-stretch -->
+
+					<!-- Description -->
+					<p class="stretch-desc">{{description}}</p>
 					</li>
-				</ul>
+					
 			{{/each}}
+			</ul>
 		</div>
-	</div>
+		
+	</div> <!-- .stretches-container -->
 	
 	<div id="pagination">
 		<div class="container">
 			<div class="wrapper d-flex justify-content-between align-items-center">
-				<div class="back-button">
+				<button class="back-button">
 					<a href="/">
 					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</a>
-				</div>
-				<div class="forward-button">
-					<a href="/ready">
-					<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-					</a>
-				</div>
+				</button>
+				<button class="forward-button confirm-stretches" type="submit">
+					
+						<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+					
+				</button>
 			</div>
 		</div>
 	</div> <!-- #pagination -->
+
+	</form>
 
 </div>
 {{/with}}

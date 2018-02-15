@@ -15,11 +15,17 @@ body {
   padding: 0 !important;
   margin: 0 !important; }
 
+button:focus, input:focus {
+  outline: 0 !important; }
+
 p {
   font-size: 1.4rem; }
 
 a:hover {
   text-decoration: none; }
+
+a {
+  color: #007AFF; }
 
 .warning {
   color: red;
@@ -79,12 +85,15 @@ a:hover {
   width: 100%;
   height: 7rem;
   bottom: 0; }
+  #pagination button {
+    border: none; }
 
 #pagination .wrapper {
   height: 100%; }
 
 #pagination span.glyphicon {
-  font-size: 3rem; }
+  font-size: 3rem;
+  color: #007AFF; }
 
 #start-page .forward-button {
   visibility: hidden; }
@@ -158,39 +167,79 @@ a:hover {
   padding-bottom: 2rem;
   display: none; }
 
-#stretches {
+.stretches-container {
   padding-bottom: 12rem; }
+  .stretches-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 60rem;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto; }
+  .stretches-container li {
+    padding: 0.3rem 2rem 0.1rem;
+    padding: 0;
+    margin: .5rem 0;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    min-height: 6.5rem; }
+    .stretches-container li.selected {
+      background-color: #edf5ff; }
+  .stretches-container h5 {
+    margin-bottom: 0.6rem; }
+  .stretches-container p {
+    font-size: 1.3rem; }
 
-#stretches ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 60rem;
-  max-width: 100%;
-  margin-top: 2rem;
-  margin-right: auto;
-  margin-left: auto; }
-
-#stretches li {
-  padding: 0.5rem 2rem;
-  text-align: left;
-  width: 100%;
-  color: #fff;
-  position: relative; }
+.stretch-info {
+  margin-left: 6.5rem;
+  height: 100%;
+  padding: 0.3rem 1.5rem 0.1rem;
+  z-index: 9999; }
 
 .expand-stretch {
   position: absolute;
-  top: 3.2rem;
-  right: 2.2rem; }
+  top: 2.3rem;
+  right: 2.2rem;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  box-sizing: border-box; }
 
 .expand-stretch span.glyphicon {
-  font-size: 3rem;
-  color: #fff; }
+  font-size: 2rem; }
+
+.stretch-desc {
+  display: none;
+  padding: 1.6rem; }
+
+.stretch-image {
+  cursor: default;
+  height: 6.5rem;
+  width: 6.5rem;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .stretch-image img {
+    max-width: 100%; }
 
 #start-now {
   padding-bottom: 9rem; }
 
-.timer {
-  font-size: 8rem; }
+#timer {
+  font-size: 8.5rem;
+  font-weight: bold; }
+
+.curr-stretch-img {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 100%;
+  width: 25rem; }
+  .curr-stretch-img img {
+    max-width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,15 @@
-.timer {
-	font-size: 8rem;
+#timer {
+	font-size: 8.5rem;
+	font-weight: bold;
 }
 
-.stop-button {
-
+.curr-stretch-img {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	max-width: 100%;
+	width: 25rem;
+	img {
+		max-width: 100%;
+	}
 }
+

@@ -50,5 +50,21 @@
 			"description" : "Separate and then straighten your fingers. Hold for 10 seconds. Then bend fingers at knuckle and hold for 10 seconds. Separate and straighten again.",
 			"tags" : "office home indoor outdoor"
 		}
+	], 
+	"todo" : [
+	],
+	"loggedIn" : false,
+	"users" : [
+		{
+			"email" : "ergo@ucsd.edu",
+			"pwd" : "ergo",
+			"phone" : "1234567890",
+			"favorites" : [
+				{
+					"name" : "COGS 120",
+					"url" : "/go?0=0&1=0&2=1&3=1"
+				}
+			]
+		}
 	]
 }

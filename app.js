@@ -18,6 +18,8 @@ var ready = require('./routes/ready');
 var go = require('./routes/go');
 var favorites = require('./routes/favorites');
 var login = require('./routes/login');
+var logout = require('./routes/logout');
+var verifyLogin = require('./routes/verify-login');
 var signup = require('./routes/signup');
 
 var app = express();
@@ -53,6 +55,8 @@ app.get('/ready', ready.view);
 app.get('/go', go.view);
 app.get('/favorites', favorites.view);
 app.get('/login', login.view);
+app.get('/logout', logout.logout);
+app.get('/verify-login', verifyLogin.login);
 app.get('/signup', signup.view);
 
 
