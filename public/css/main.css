@@ -11,6 +11,10 @@ html, body {
 body {
   position: relative; }
 
+[class*="col-"] {
+  padding: 0 !important;
+  margin: 0 !important; }
+
 button:focus, input:focus {
   outline: 0 !important; }
 
@@ -104,10 +108,10 @@ a {
   height: 15rem;
   min-height: 15rem;
   color: #fff;
-  cursor: pointer;
-  margin-bottom: 3rem; }
+  cursor: pointer; }
   .environment .wrapper {
-    height: 100%; }
+    height: 100%;
+    width: 100%; }
   .environment h4 {
     padding: 0;
     margin: 0;
