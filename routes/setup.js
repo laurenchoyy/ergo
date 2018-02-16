@@ -6,9 +6,12 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
+	// Reset active
+	for (var i in data.stretches) {
+		data.stretches[i].active = false;	
+	}
 
 	var inputClass = req.query["name"];
-
 	// Activate stretches for this environment
 
 	for (var i in data.stretches) {

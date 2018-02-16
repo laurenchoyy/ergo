@@ -6,8 +6,6 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-	data.activeEnvironment = false;
-
 	// Clear todo queue
 	data.todo = [];
 
@@ -18,8 +16,6 @@ exports.view = function(req, res){
 		if (selected[i] == 1) { 
 		var stretch = data.stretches[i];
 		data.todo.push(stretch);
-
-		console.log(stretch.title, data.todo.length);
 		}
 	}
 

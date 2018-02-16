@@ -19,8 +19,8 @@
 			<ul>
 			{{#each stretches}}
 				
-					<li class="stretch {{#if active }}selected{{/if}}">
-						<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="0">
+					<li class="stretch {{#if active}}selected{{/if}}">
+						<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="{{#if active}}1{{/if}}{{#unless active}}0{{/unless}}">
 					<!-- Icon -->
 					<div class="stretch-image">
 						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
@@ -50,16 +50,19 @@
 	<div id="pagination">
 		<div class="container">
 			<div class="wrapper d-flex justify-content-between align-items-center">
-				<button class="back-button">
-					<a href="http://lorempixel.com">
-					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-					</a>
+
+				<button class="bac-button" onclick="goBack()">
+					
+					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> 
+
 				</button>
+
 				<button class="forward-button confirm-stretches" type="submit">
 					
 						<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 					
 				</button>
+
 			</div>
 		</div>
 	</div> <!-- #pagination -->
