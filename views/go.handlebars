@@ -5,7 +5,17 @@
 
 			<div class="row">
 				<div class="col" style="text-align: right">
-					<h2><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></h2>
+
+					<form id="fav-form" {{#if loggedIn}}action="/save" method="get"{{/if}}>
+
+						<input class="favName" type="hidden" name="name" value="">
+						<input class="favUrl" type="hidden" name="url" value="">
+
+						<div class="fav-button" {{#if loggedIn}}onclick="favorite()"{{/if}} {{#unless loggedIn}}onclick="loginWarning()"{{/unless}}>
+							<h2><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h2>
+						</div>
+					
+					</form>
 				</div>
 			</div>
 

@@ -55,13 +55,15 @@ a {
   text-align: left; }
 
 #tabs {
-  text-align: center; }
+  text-align: center;
+  background-color: #f7f7f7;
+  padding-bottom: 1rem; }
 
 #tabs .wrapper {
   height: 7.5rem;
   margin-top: 1rem; }
 
-#progress {
+.progress-container {
   width: 100%;
   margin: 3rem 0;
   height: .5rem; }
@@ -74,7 +76,7 @@ a {
 #home-page .progress-bar {
   width: 33.33%; }
 
-#stretches-page .progress-bar {
+#setup-page .progress-bar {
   width: 66.66%; }
 
 #start-page .progress-bar {
@@ -104,18 +106,16 @@ a {
 #home-page h2 {
   margin-bottom: 3rem; }
 
-.environment {
-  height: 15rem;
-  min-height: 15rem;
-  color: #fff;
+.login {
+  color: #007AFF;
   cursor: pointer; }
-  .environment .wrapper {
-    height: 100%;
-    width: 100%; }
-  .environment h4 {
-    padding: 0;
-    margin: 0;
-    font-size: 2rem; }
+
+#environments button {
+  background-color: #007AFF;
+  border: none;
+  height: 15rem;
+  width: 100%;
+  color: #fff; }
 
 #login-page .row {
   margin: 2rem 0; }
@@ -216,5 +216,11 @@ a {
   width: 25rem; }
   .curr-stretch-img img {
     max-width: 100%; }
+
+#fav-form {
+  margin-right: 2rem; }
+
+.fav-button {
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

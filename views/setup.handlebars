@@ -1,10 +1,10 @@
 {{#with data}}
 <div id="setup-page">
 
-	<div id="progress">
+	<div class="progress-container">
 		<div class="container d-flex justify-content-center">
 			<div class="progress">
-		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+		 		<div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 		</div>
 	</div> <!-- #progress -->
@@ -19,7 +19,7 @@
 			<ul>
 			{{#each stretches}}
 				
-					<li class="stretch">
+					<li class="stretch {{#if active }}selected{{/if}}">
 						<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="0">
 					<!-- Icon -->
 					<div class="stretch-image">
@@ -51,7 +51,7 @@
 		<div class="container">
 			<div class="wrapper d-flex justify-content-between align-items-center">
 				<button class="back-button">
-					<a href="/">
+					<a href="http://lorempixel.com">
 					<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</a>
 				</button>

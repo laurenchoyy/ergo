@@ -32,6 +32,20 @@ function checkPhone(phone) {
 	return true;
 }
 
+function setup(className) {
+	
+
+
+	//var environment = $('.setup-input').val();
+	
+alert(className);
+	//$('.' + environment).addClass('selected');
+
+	$('.setup-form').submit();
+	 
+
+}
+
 function login() {
 	// Clear warnings
 	$('.warning').text("");
@@ -48,6 +62,13 @@ function login() {
 		return;
 
 	window.location.href = "/";
+}
+
+function logout() {
+	if (confirm("Logout?")) 
+		window.location.href = "/logout";
+	else
+		return;
 }
 
 function signup() {
@@ -70,6 +91,23 @@ function signup() {
 		return;
 
 	window.location.href = "/";
+}
+
+function favorite() {
+	var name = prompt("Name for these settings:");
+
+	var queryString = location.href.split(location.host)[1];
+	//optionally removing the leading `/`
+	//var queryString = location.href.split(location.host)[1].replace(/^\//,'');
+
+	$('.favName').val(name);
+	$('.favUrl').val(queryString);
+
+	$('#fav-form').submit();
+}
+
+function loginWarning() {
+	alert("You must be logged in to save favorites.");
 }
 
 var main = function () {	
@@ -157,7 +195,7 @@ var main = function () {
 	$('#resetButton').click(function () { Clock.reset(); });
 	$('#restartButton').click(function () { Clock.restart(); });
 
-
+	/* Favorite */
 
 };
 

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<!-- meta tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +32,7 @@
 					{{/unless}}
 
 					{{#if data.loggedIn}}
-					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a href="/logout">Logout</a></h4></div>
+					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a onclick="logout()">{{data.loggedIn.name}}</a></h4></div>
 					{{/if}}
 
 					
@@ -38,7 +40,7 @@
 				<div class="col">
 					<a href="/">
 						<div class="logo-container bg-primary">
-							<img src="" alt="Ergo logo">
+							<img src="images/logo.svg" alt="Ergo logo">
 						</div>
 					</a>
 				</div>

@@ -1,7 +1,7 @@
 {{#with data}}
 <div id="home-page">
 
-	<div id="progress">
+	<div class="progress-container">
 		<div class="container d-flex justify-content-center">
 			<div class="progress">
 		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
@@ -9,36 +9,36 @@
 		</div>
 	</div> <!-- #progress -->
 
-	<div id="get-started">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<h2>Where are you working today?</h2>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2>Where are you working today?</h2>
 			</div>
-			<div class="row">
-				{{#each environments}}
-				
-				<div class="col-6">
-					<a href="/setup">
-					<div class="environment {{className}} bg-primary">
-				
-						<!-- <div class="bg"><img src="{{background}}"></div> -->
-						<div class="wrapper d-flex align-items-center justify-content-center">
-							<h4 class="environment-name">{{name}}</h4>
-						</div>
+		</div>
+	</div>
 
-					</div>
-					</a>
-					
-				</div>
-				
-				{{/each}}
-				</div>
 
-			
-		</div> 
-	</div> <!-- #get-started -->
+<div id="environments">
+	<div class="container">
+		<div class="row">
+
+			{{#each environments}}
+			<div class="col-6">
+
+				<form class="setup-form" action="/setup" method="get">
+
+				<button type="submit"><h3>{{name}}</h3></button>
+				<input type="hidden" name="name" value="{{className}}">
+
+				</form>
+				
+			</div> <!-- .col-6 -->
+			{{/each}}
+
+		</div>
+	</div>
+</div>
+
 
 </div> <!-- #home-page -->
 {{/with}}

@@ -3,19 +3,18 @@
 		margin-bottom: 3rem;
 	}
 }
-.environment {
-	height: 15rem;
-	min-height: 15rem;
-	color: #fff;
-	cursor: pointer;
-	.wrapper {
-		height: 100%;
-		width: 100%;
-	}
-	h4 {
-		padding: 0;
-		margin: 0;
-		font-size: 2rem;
-	}
 
+.login {
+	color: $primary;
+	cursor: pointer;
+}
+
+#environments {
+	button {
+		background-color: $primary;
+		border: none;
+		height: 15rem;
+		width: 100%;
+		color: #fff;
+	}
 }
