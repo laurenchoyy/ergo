@@ -84,7 +84,7 @@
 				Back
 			</button>
 
-			<button class="btn btn-primary forward-button confirm-stretches" {{#if loggedIn}}type="submit"{{/if}} {{#unless phone}}type="button" data-toggle="modal" data-target="#getPhone"{{/unless}}>
+			<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless phone}} onclick="confirmStretches()"{{/unless}}>
 				Start Stretching
 			</button>
 

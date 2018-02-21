@@ -22,6 +22,9 @@ html {
 button:focus, input:focus {
   outline: 0 !important; }
 
+.btn {
+  cursor: pointer; }
+
 /***** example ******/
 /* Space out content a bit */
 body {

@@ -161,6 +161,46 @@ function selectStretch(input) {
 	}
 }
 
+function confirmStretchesLoggedIn() {
+	var empty = true;
+
+	// Submit form if at least one stretch is selected
+	$('.stretch-checkbox').each(function() {
+		if ($(this).val() == "1") {
+			empty = false;
+		}
+	});
+
+	// Otherwise, show warning
+	if (empty) {
+		alert("You must select at least one stretch.");
+		return;
+	}
+	else {
+		$('#stretch-form').submit();
+	}
+}
+
+function confirmStretches() {
+	var empty = true;
+
+	// Submit form if at least one stretch is selected
+	$('.stretch-checkbox').each(function() {
+		if ($(this).val() == "1") {
+			empty = false;
+		}
+	});
+
+	// Otherwise, show warning
+	if (empty) {
+		alert("You must select at least one stretch.");
+		return;
+	}
+	else {
+		$('#getPhone').modal('show');
+	}
+}
+
 /*
  * main
  */
@@ -192,6 +232,7 @@ var main = function () {
 		selectStretch(this);
 	});
 
+/*
 	$('.confirm-stretches').click(function(e) {
 		var empty = true;
 		// Submit form if at least one stretch is selected
@@ -208,7 +249,7 @@ var main = function () {
 		}
 
 	}); 
-
+*/
 
 	/* Timer */
 	var Clock = {
