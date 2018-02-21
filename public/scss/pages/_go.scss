@@ -1,5 +1,5 @@
 #timer {
-	font-size: 8.5rem;
+	font-size: 6rem;
 	font-weight: bold;
 }
 
@@ -11,5 +11,18 @@
 	img {
 		max-width: 100%;
 	}
+}
+
+#pauseButton, #resumeButton, #resetButton {
+	display: none;
+}
+
+#startButton, #pauseButton, #resumeButton {
+	cursor: pointer;
+}
+
+#fav-form {
+	width: 100%;
+	color: $primary;
 }
 

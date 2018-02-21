@@ -1,10 +1,18 @@
 {{#with data}}
 <div id="go-page">
-	<div id="go">
+
+		<div class="progress-container">
+		<div class="d-flex justify-content-center">
+			<div class="progress">
+		 		<div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
+	</div> <!-- #progress -->
+	
 		<div class="container">
 
 			<div class="row">
-				<div class="col" style="text-align: right">
+				<div class="col text-center">
 
 					<form id="fav-form" {{#if loggedIn}}action="/save" method="get"{{/if}}>
 
@@ -12,7 +20,7 @@
 						<input class="favUrl" type="hidden" name="url" value="">
 
 						<div class="fav-button" {{#if loggedIn}}onclick="favorite()"{{/if}} {{#unless loggedIn}}onclick="loginWarning()"{{/unless}}>
-							<h2><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h2>
+							<h5>Save Routine to Favorites</h5>
 						</div>
 					
 					</form>
@@ -20,27 +28,20 @@
 			</div>
 
 			<div class="row">
-				<div class="col">
+				<div class="col text-center">
 					
-
-
 					<div id="timer"><span id="min">00</span>:<span id="sec">00</span></div>
 
+					<button id="startButton" class="btn btn-success btn-lg" type="button" value="Start">Start</button> 
+
+					<div class="btn-group controls" role="group" aria-label="...">
+						<button id="resumeButton" class="btn btn-secondary btn-lg" type="button" value="Resume"><span class="oi oi-media-play"></span></button>
+						<button id="pauseButton" class="btn btn-secondary btn-lg" type="button" value="Pause"><span class="oi oi-media-pause"></span></button>
+						
+					
+					<button id="resetButton" class="btn btn-danger btn-lg" type="button" value="Reset"><span class="oi oi-media-stop"></span></button>
 					<!--
-					<input id="startButton" type="button" value="Start">
-					<input id="pauseButton" type="button" value="Pause">
-					<input id="resumeButton" type="button" value="Resume">
-					<input id="resetButton" type="button" value="Reset">
-					<input id="restartButton" type="button" value="Restart"> -->
-
-
-					<div class="btn-group" role="group" aria-label="...">
-
-					  <button id="startButton" class="btn btn-default" type="button" value="Start">Start</button>
-					<button id="pauseButton" class="btn btn-default" type="button" value="Pause">Pause</button>
-					<button id="resumeButton" class="btn btn-default" type="button" value="Resume">Resume</button>
-					<button id="resetButton" class="btn btn-default" type="button" value="Reset">Reset</button>
-					<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button>
+					<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button> -->
 					</div>
 
 
@@ -57,52 +58,24 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col">
+				<div class="pagination d-flex justify-content-between">
 
-				<div class="stretches-container">
-					
-					<div class="container">
-						<h3>Next Stretches</h3>
-					
-						<form id="stretch-form" action="/ready" method="get">
+			<button class="btn btn-primary back-button" type="button" onclick="backToStretches()">
+				<!--<p class="oi oi-arrow-left"></p> -->
+				Back
+			</button>
 
-						<ul>
-						{{#each todo}}
-							
-								<li class="stretch">
-									<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="0">
-								<!-- Icon -->
-								<div class="stretch-image">
-									<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
-								</div> <!-- .stretch-image -->
+			<button class="btn btn-primary forward-button confirm-stretches" type="submit">
+				<!--<p class="oi oi-arrow-right"></p>-->
+				Next
+			</button>
 
-								<!-- Info -->
-								<div class="stretch-info">
-									<h5 class="text-primary">{{title}}</h5>
-									<p><i>{{target}} • {{time}}</i></p>
-								</div> <!-- .stretch-info -->
+	</div>  <!-- .pagination -->
 
-								<!-- Expand button -->
-								<div class="expand-stretch">
-									<span class="chevron glyphicon glyphicon-chevron-down text-primary" aria-hidden="true"></span>
-								</div> <!-- .expand-stretch -->
 
-								<!-- Description -->
-								<p class="stretch-desc">{{description}}</p>
-								</li>
-								
-						{{/each}}
-						</ul>
-					</div>
-					
-				</div> <!-- .stretches-container -->
 
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
+		</div> <!-- .container -->
+	
+</div> <!-- #go-page -->
 {{/with}}
 

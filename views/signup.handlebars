@@ -9,23 +9,28 @@
 					
 					<form class="login-form" action="/verify-signup">
 
-						<!-- Name -->
+						<!-- First Name -->
 						<div class="input-group input-group-lg">
-							<span class="input-group-addon" id="sizing-addon1">Name</span>
-							<input name="name" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+							<span class="input-group-addon" id="sizing-addon1">First Name</span>
+							<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+						</div>
+						<!-- Last Name -->
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon1">Last Name</span>
+							<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
 						</div>
 
 						<!-- Email -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-							<input name="email" type="text" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" required>
+							<input name="email" type="email" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" required>
 						</div>
 						<!-- <p class="email-warning warning"></p> -->
 
 						<!-- Password -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Password</span>
-							<input name="pwd" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+							<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" required>
 						</div>
 				
 
@@ -33,13 +38,13 @@
 						<!-- Phone -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Phone</span>
-							<input name="phone" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+							<input name="phone" type="number" class="form-control" placeholder="1234567890" aria-describedby="sizing-addon1" required>
 						</div>
 
 			
 
 						<!-- Sign Up button -->
-						<button type="submit" onclick="signup()" class="btn btn-default btn-block">Sign Up</button>
+						<button type="submit" onclick="signup()" class="btn btn-primary btn-block">Sign Up</button>
 
 						{{#if ../signupError}}
 							<p style="margin-top: 2rem; color: red;">{{../signupError}}</p>
@@ -52,8 +57,8 @@
 			</div> <!-- .row -->
 
 			<div class="row">
-				<div class="col">
-					<h4>Already have an account? <a href="/login">Login</a></h4>
+				<div class="col toggleLoginSignup">
+					<h5>Already have an account? <a href="/login">Log In</a></h5>
 				</div>
 			</div>
 

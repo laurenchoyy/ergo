@@ -3,68 +3,146 @@
 
 <head>
 	<!-- meta tags -->
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>{{title}}</title>
-	<!-- Bootstrap CDN -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!-- Bootstrap CDN 
+  
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+
 	<!-- Bootstrap 
-	<link href="css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="css/bootstrap.css" rel="stylesheet"> 
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> 
+	<link href="css/bootstrap.min.css" rel="stylesheet"> 
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
+	<!-- open iconic  -->
+	<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
 	<!-- main.css -->
 	<link href="css/main.css" rel="stylesheet">
 	<!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+ 
     <!-- jQuery local fallback -->
     <script>
     if (typeof jQuery == 'undefined') {
             document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
         }
     </script>
+
+    <!--
+    <style type="text/css">
+            body.js .hideWelcome { display: none; }
+    </style> -->
+
+    <style type="text/css">
+            html.js .hideWelcome { display: none; }
+    </style>
+    <script>
+        if(localStorage.getItem("hideWelcome")) {
+        	document.documentElement.className += ' js';
+		} 
+    </script>
+
 </head>
-<body>
-	<div id="header">
+<body>	
+
+<div class="container">
+
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-left">
+          	<li class="navbar-brand"><a class="text-muted" href="/">Ergo</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Get Started<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/favorites">Favorites</a>
+            </li>
+          </ul>
+
+          <!-- If not logged in -->
+          {{#unless data.loggedIn}}
+          <ul class="nav nav-pills float-right hidden-sm-down">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+            </li>
+          	<li class="nav-item">
+              <a class="nav-link" href="/signup">Sign Up<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+
+          <!-- Narrow nav -->
+          <ul class="nav nav-pills float-right hidden-md-up">
+          	<li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          <span class="oi oi-account-login"></span>
+		        </a>
+		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+
+              <a class="dropdown-item" href="/login">Login</a>
+		          <a class="dropdown-item" href="/signup">Sign Up</a>
+		          
+		        </div>
+		      </li>
+          </ul>
+          {{/unless}}
+
+          <!-- If logged in -->
+          {{#if data.loggedIn}}
+          <ul class="nav nav-pills float-right hidden-sm-down">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Settings<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+          </ul>
+
+          <!-- Narrow nav -->
+          <ul class="nav nav-pills float-right hidden-md-up">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle no-arrow" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="oi oi-wrench"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="/logout">Log Out</a>
+            </div>
+          </li>
+          </ul>
+          {{/if}}
+
+        </nav>
+        
+      </div>
+ </div> <!-- /container -->
+
+      {{{body}}}
+
+    
+
+    <!-- Footer -->
+	<footer class="footer">
 		<div class="container">
-			<div class="row">
-				<div class="col">
-					{{#unless data.loggedIn}}
-					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a href="/login">Login</a></h4></div>
-					{{/unless}}
-
-					{{#if data.loggedIn}}
-					<div class="login align-self-start" style="{{#if hideLogin}}display:none;{{/if}}"><h4><a onclick="logout()">{{data.loggedIn.name}}</a></h4></div>
-					{{/if}}
-
-					
-				</div>
-				<div class="col">
-					<a href="/">
-						<div class="logo-container bg-primary">
-							<img src="images/logo.svg" alt="Ergo logo">
-						</div>
-					</a>
-				</div>
-				<div class="col">
-				</div>
-			</div>
-		</div> <!-- .container -->
-	</div>  <!-- #header -->
-
-	<div id="tabs" style="{{#if hideTabs}}display: none;{{/if}}">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col">
-					<h3><a href="/">Get Started</a></h3>
-				</div>
-				<div class="col">
-					<h3><a href="/favorites">Favorites</a></h3>
-				</div>
-			</div>
+			<span class="text-muted">Ergo &copy; 2018</span>
 		</div>
-	</div> <!-- #tabs -->
+    </footer> 
 	
-		{{{body}}}
 
+	<!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

@@ -13,8 +13,14 @@
 	button {
 		background-color: $primary;
 		border: none;
-		height: 15rem;
+		//height: 20vh;
+		height: 10rem;
 		width: 100%;
 		color: #fff;
+		cursor: pointer;
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 }
+

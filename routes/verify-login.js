@@ -19,6 +19,7 @@ exports.login = function(req, res){
 		if (email == currUser.email) {
 			if (pwd == currUser.pwd) {
 				data.loggedIn = currUser;
+				data.phone = currUser.phone;
 				res.redirect('/');
 				return;
 			}

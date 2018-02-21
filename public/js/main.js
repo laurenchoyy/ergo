@@ -2,10 +2,23 @@
  * main.js
  */
 
+function hideWelcome() {
+	localStorage.setItem("hideWelcome", "true");
+	$('#welcome').hide();
+}
 
 function goBack() {
 	window.history.back();
 }
+
+function backToStretches() {
+	if (confirm("Are you sure? The timer will reset.")) 
+		goBack();
+	else
+		return;
+}
+
+
 
 function checkEmail(email) {
 	// Check that user completed fields
@@ -32,6 +45,7 @@ function checkPhone(phone) {
 	return true;
 }
 
+/*
 function setup(className) {
 	
 
@@ -45,6 +59,7 @@ alert(className);
 	 
 
 }
+*/
 
 function login() {
 	// Clear warnings
@@ -65,7 +80,7 @@ function login() {
 }
 
 function logout() {
-	if (confirm("Logout?")) 
+	if (confirm("Log out?")) 
 		window.location.href = "/logout";
 	else
 		return;
@@ -110,26 +125,67 @@ function loginWarning() {
 	alert("You must be logged in to save favorites.");
 }
 
-var main = function () {	
+function getPhone() {
+	var phone = prompt("Ergo sends alerts through SMS. Where can we reach you?");
+	if (phone) {
+    	submit();
+	}
+	else
+		return;
+}
+
+function sortStretches() {
+	var stretches = $('.stretch-list>li');
+
+	$.each(stretches, function() {
+		if ($(this).hasClass('selected'))
+			$(this).parent().prepend(this);
+	});
+}
+
+function selectStretch(input) {
+	var stretch = $(input).closest('.stretch');
+	stretch.toggleClass('selected');
+		
+	// If stretch is selected, set value to 1 (true)
+	if (stretch.hasClass('selected')) {
+		stretch.find('.stretch-checkbox').val("1")
+	}
+	// Otherwise, set to 0 (false)
+	else {
+		stretch.find('.stretch-checkbox').val("0")
+	}
+}
+
+/*
+ * main
+ */
+var main = function () {
+	// For development only
+	//localStorage.clear();
+
+	/* Highlight active menu item */
+  	var url = window.location.href;
+    $('.nav-link').filter(function() {
+        return this.href == url;
+    }).addClass('active'); 
+
+    sortStretches();
+
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {
 		$(this).closest('.stretch').find('.stretch-desc').slideToggle(250);
-		$(this).find('.chevron').toggleClass('glyphicon-chevron-down');
-		$(this).find('.chevron').toggleClass('glyphicon-chevron-up');
+		$(this).find('.chevron').toggleClass('oi-chevron-bottom');
+		$(this).find('.chevron').toggleClass('oi-chevron-top');
 	});
 
+	// Toggle select stretch
 	$('#setup-page .stretch-info').click(function() {
-		var stretch = $(this).closest('.stretch');
-		stretch.toggleClass('selected');
-		
-		// If stretch is selected, set value to 1 (true)
-		if (stretch.hasClass('selected')) {
-			stretch.find('.stretch-checkbox').val("1")
-		}
-		// Otherwise, set to 0 (false)
-		else {
-			stretch.find('.stretch-checkbox').val("0")
-		}
+		selectStretch(this);
+	});
+	// Toggle select stretch
+	$('#setup-page .stretch-image').click(function() {
+		selectStretch(this);
 	});
 
 	$('.confirm-stretches').click(function(e) {
@@ -189,10 +245,22 @@ var main = function () {
 	};
 
 
-	$('#startButton').click(function () { Clock.start(); });
+	$('#startButton').click(function () {
+		Clock.start(); 
+		$(this).hide();
+		$('#resumeButton').show();
+		$('#pauseButton').show();
+		$('#resetButton').show();
+	});
 	$('#pauseButton').click(function () { Clock.pause(); });
 	$('#resumeButton').click(function () { Clock.resume(); });
-	$('#resetButton').click(function () { Clock.reset(); });
+	$('#resetButton').click(function () {
+		Clock.reset(); 
+		$(this).hide();
+		$('#startButton').show();
+		$('#pauseButton').hide();
+		$('#resetButton').hide();
+	});
 	$('#restartButton').click(function () { Clock.restart(); });
 
 	/* Favorite */

@@ -1,12 +1,4 @@
-#header {
-	text-align: center;
-	background-color: #f7f7f7;
-	padding: 1.5rem 0;
-}
-
-#header .wrapper {
-	height: 7rem;
-}
+$footer-height: 5rem;
 
 .logo-container {
 	display: inline-block;
@@ -25,14 +17,33 @@
 	text-align: left;
 }
 
-#tabs {
-	text-align: center;
-	background-color: #f7f7f7;
-	padding-bottom: 1rem;
+
+
+.navbar {
+	a {
+		font-size: 1.5rem;
+	}
 }
 
-#tabs .wrapper {
-	height: 7.5rem;
 
-	margin-top: 1rem;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+
+	margin-bottom: $footer-height;
+}
+.footer {
+	padding-top: 0rem;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: $footer-height;
+	line-height: $footer-height;
+	background-color: #f5f5f5;
 }

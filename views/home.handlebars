@@ -1,33 +1,41 @@
 {{#with data}}
 <div id="home-page">
 
+<div class="container">
+	<div id="welcome" class="hideWelcome jumbotron">
+        <h1 class="display-3">Welcome to Ergo</h1>
+        <p class="lead">Ergo is a mobile web app that combats the discomfort and injury that results from a sedentary lifestyle by periodically alerting users to stretch. Designed to work across many different environments, including offices, coffee shops, and outdoor spaces, Ergo is unique in that it introduces exercises that utilize the everyday objects around us.</p>
+
+        <button id="hide-welcome" class="btn btn-lg btn-success" onclick="hideWelcome()" role="button">Hide</button>
+    </div>
+
+
 	<div class="progress-container">
-		<div class="container d-flex justify-content-center">
+		<div class="d-flex justify-content-center">
 			<div class="progress">
 		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 		</div>
 	</div> <!-- #progress -->
 
-	<div class="container">
 		<div class="row">
-			<div class="col">
-				<h2>Where are you working today?</h2>
+			<div class="col text-center">
+				<h2>{{#if loggedIn}}Hello {{loggedIn.firstName}}! {{/if}}Where are you working today?</h2>
 			</div>
 		</div>
-	</div>
+
+</div> <!-- .container -->
 
 
-<div id="environments">
-	<div class="container">
-		<div class="row">
+<div class="container">
+		<div id="environments" class="row no-gutters">
 
 			{{#each environments}}
 			<div class="col-6">
 
 				<form class="setup-form" action="/setup" method="get">
 
-				<button type="submit"><h3>{{name}}</h3></button>
+				<button type="submit"><h4>{{name}}</h4></button>
 				<input type="hidden" name="name" value="{{className}}">
 
 				</form>
@@ -35,9 +43,9 @@
 			</div> <!-- .col-6 -->
 			{{/each}}
 
-		</div>
-	</div>
-</div>
+		</div> <!-- .row -->
+</div> <!-- .container-fluid -->
+
 
 
 </div> <!-- #home-page -->

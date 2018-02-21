@@ -7,7 +7,8 @@ var data = require('../data.json');
 
 exports.login = function(req, res){
 
-	var name = req.query["name"];
+	var firstName = req.query["firstName"];
+	var lastName = req.query["lastName"];
 	var email = req.query["email"];
 	var pwd = req.query["pwd"];
 	var phone = req.query["phone"];
@@ -32,13 +33,15 @@ exports.login = function(req, res){
 
 	// If valid new account, push user
 	var newUser = {
-		"name" : name,
+		"firstName" : firstName,
+		"lastName" : lastName,
 		"email" : email,
 		"pwd" : pwd,
 		"phone" : phone,
 		"favorites" :[
 		]
 	};
+	data.phone = newUser.phone;
 	data.loggedIn = newUser;
 	data.users.push(newUser);
 

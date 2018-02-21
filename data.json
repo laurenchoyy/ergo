@@ -65,10 +65,12 @@
 	], 
 	"todo" : [
 	],
+	"phone" : false,
 	"loggedIn" : false,
 	"users" : [
 		{
-			"name" : "John Smith",
+			"firstName" : "Jon",
+			"lastName" : "Snow",
 			"email" : "ergo@ucsd.edu", 
 			"pwd" : "ergo",
 			"phone" : "1234567890",

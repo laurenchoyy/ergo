@@ -1,25 +1,84 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */ }
+
+.no-arrow::after {
+  display: none !important; }
+
 /*
  * Base styles
  */
-html, body {
-  font-size: 62.5%;
-  min-height: 100%;
-  text-align: center;
-  /*
-  -webkit-font-smoothing: antialiased; */ }
+html {
+  -webkit-font-smoothing: antialiased; }
 
-body {
-  position: relative; }
-
+/*
 [class*="col-"] {
   padding: 0 !important;
-  margin: 0 !important; }
-
+  margin: 0 !important;
+} */
 button:focus, input:focus {
   outline: 0 !important; }
 
+/***** example ******/
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5; }
+
+/* Customize container */
+@media (min-width: 48em) {
+  .container {
+    max-width: 46rem; } }
+.container-narrow > hr {
+  margin: 2rem 0; }
+
+/* Welcome message */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5; }
+  .jumbotron .btn {
+    padding: .75rem 1.5rem;
+    font-size: 1.5rem; }
+
+/* Supporting marketing content */
+.marketing p + h4 {
+  margin-top: 1.5rem; }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-right: 0;
+    padding-left: 0; }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem; }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0; } }
+@font-face {
+  font-family: 'Icons';
+  src: url("../fonts/openiconic/open-iconic.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/openiconic/open-iconic.eot?#iefix") format("embedded-opentype"), url("../fonts/openiconic/open-iconic.woff") format("woff"), url("../fonts/openiconic/open-iconic.ttf") format("truetype"), url("../fonts/openiconic/open-iconic.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+h2 {
+  margin: 2rem 0; }
+
 p {
-  font-size: 1.4rem; }
+  font-size: 1.2rem; }
 
 a:hover {
   text-decoration: none; }
@@ -31,14 +90,6 @@ a {
   color: red;
   text-align: left;
   font-size: 1.2rem; }
-
-#header {
-  text-align: center;
-  background-color: #f7f7f7;
-  padding: 1.5rem 0; }
-
-#header .wrapper {
-  height: 7rem; }
 
 .logo-container {
   display: inline-block;
@@ -54,14 +105,28 @@ a {
 .login {
   text-align: left; }
 
-#tabs {
-  text-align: center;
-  background-color: #f7f7f7;
-  padding-bottom: 1rem; }
+.navbar a {
+  font-size: 1.5rem; }
 
-#tabs .wrapper {
-  height: 7.5rem;
-  margin-top: 1rem; }
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 5rem; }
+
+.footer {
+  padding-top: 0rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 5rem;
+  line-height: 5rem;
+  background-color: #f5f5f5; }
 
 .progress-container {
   width: 100%;
@@ -69,9 +134,9 @@ a {
   height: .5rem; }
 
 .progress {
-  width: 30rem;
+  width: 20rem;
   max-width: 80vw;
-  height: .5rem; }
+  height: 1rem; }
 
 #home-page .progress-bar {
   width: 33.33%; }
@@ -79,28 +144,10 @@ a {
 #setup-page .progress-bar {
   width: 66.66%; }
 
-#start-page .progress-bar {
+#go-page .progress-bar {
   width: 100%; }
 
-#pagination {
-  position: absolute;
-  width: 100%;
-  height: 7rem;
-  bottom: 0; }
-  #pagination button {
-    border: none; }
-
-#pagination .wrapper {
-  height: 100%; }
-
-#pagination span.glyphicon {
-  font-size: 3rem;
-  color: #007AFF; }
-
-#start-page .forward-button {
-  visibility: hidden; }
-
-#home-page #pagination {
+#go-page .forward-button {
   visibility: hidden; }
 
 #home-page h2 {
@@ -113,9 +160,16 @@ a {
 #environments button {
   background-color: #007AFF;
   border: none;
-  height: 15rem;
+  height: 10rem;
   width: 100%;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
+  #environments button:hover {
+    opacity: 0.8; }
+
+.toggleLoginSignup {
+  text-align: center;
+  margin-top: 2rem; }
 
 #login-page .row {
   margin: 2rem 0; }
@@ -143,59 +197,69 @@ a {
   display: none; }
 
 .stretches-container {
-  padding-bottom: 12rem; }
+  padding-bottom: 1rem; }
   .stretches-container ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 60rem;
-    max-width: 100%;
-    margin-top: 2rem;
+    width: 100%;
     margin-right: auto;
     margin-left: auto; }
   .stretches-container li {
-    padding: 0.3rem 2rem 0.1rem;
     padding: 0;
-    margin: .5rem 0;
+    margin: .2rem 0;
     text-align: left;
     width: 100%;
     position: relative;
     background-color: #f7f7f7;
     cursor: pointer;
-    min-height: 6.5rem; }
-    .stretches-container li.selected {
-      background-color: #edf5ff; }
-  .stretches-container h5 {
-    margin-bottom: 0.6rem; }
+    min-height: 3.5rem; }
+    .stretches-container li.selected .stretch-info:after {
+      content: url("../images/icons/check.svg");
+      content: "";
+      background-image: url("../images/icons/check.svg");
+      background-repeat: no-repeat;
+      display: inline-block;
+      background-size: 2rem 2rem;
+      height: 2rem;
+      width: 2rem;
+      position: absolute;
+      left: .75rem;
+      top: .75rem;
+      z-index: 0;
+      opacity: 0.9; }
   .stretches-container p {
-    font-size: 1.3rem; }
+    font-size: .8rem;
+    margin-bottom: 0; }
 
 .stretch-info {
-  margin-left: 6.5rem;
+  margin-left: 3.5rem;
   height: 100%;
-  padding: 0.3rem 1.5rem 0.1rem;
+  padding: 0.5rem .8rem 0.1rem;
   z-index: 9999; }
 
 .expand-stretch {
   position: absolute;
-  top: 2.3rem;
-  right: 2.2rem;
+  top: 1rem;
+  right: 1rem;
   top: 0;
   right: 0;
-  padding: 2rem;
-  box-sizing: border-box; }
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #007AFF; }
 
-.expand-stretch span.glyphicon {
-  font-size: 2rem; }
+.expand-stretch .io {
+  font-size: 1rem; }
+.expand-stretch .oi-chevron-up {
+  display: none; }
 
 .stretch-desc {
   display: none;
-  padding: 1.6rem; }
+  padding: 1.6rem 1rem 1rem; }
 
 .stretch-image {
-  cursor: default;
-  height: 6.5rem;
-  width: 6.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   position: absolute;
   left: 0;
   top: 0; }
@@ -206,7 +270,7 @@ a {
   padding-bottom: 9rem; }
 
 #timer {
-  font-size: 8.5rem;
+  font-size: 6rem;
   font-weight: bold; }
 
 .curr-stretch-img {
@@ -216,6 +280,16 @@ a {
   width: 25rem; }
   .curr-stretch-img img {
     max-width: 100%; }
+
+#pauseButton, #resumeButton, #resetButton {
+  display: none; }
+
+#startButton, #pauseButton, #resumeButton {
+  cursor: pointer; }
+
+#fav-form {
+  width: 100%;
+  color: #007AFF; }
 
 #fav-form {
   margin-right: 2rem; }
