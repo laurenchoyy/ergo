@@ -10,13 +10,33 @@
     </div>
 
 
-	<div class="progress-container">
-		<div class="d-flex justify-content-center">
-			<div class="progress">
-		 		<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
-			</div>
-		</div>
-	</div> <!-- #progress -->
+
+
+<div class="progress-container">
+  
+<ol class="progressBar">
+  <li class="progress-bar-step is-current">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Choose Setting</span>
+  </li>
+  <li class="progress-bar-step">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Select Stretches</span>
+  </li>
+  <li class="progress-bar-step">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Ready to Go!</span>
+  </li>
+</ol>
+  
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <symbol id="checkmark-bold" viewBox="0 0 24 24">
+    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+  </symbol>
+</svg>
+
 
 		<div class="row">
 			<div class="col text-center">
@@ -24,10 +44,7 @@
 			</div>
 		</div>
 
-</div> <!-- .container -->
 
-
-<div class="container">
 		<div id="environments" class="row no-gutters">
 
 			{{#each environments}}

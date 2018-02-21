@@ -3,14 +3,31 @@
 
 <div class="container">
 
-	<div class="progress-container">
-		<div class="d-flex justify-content-center">
-			<div class="progress">
-		 		<div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-			</div>
-		</div>
-	</div> <!-- #progress -->
 
+
+<div class="progress-container">  
+<ol class="progressBar">
+  <li class="progress-bar-step is-complete">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Choose Setting</span>
+  </li>
+  <li class="progress-bar-step is-current">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Select Stretches</span>
+  </li>
+  <li class="progress-bar-step">
+    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+    <span class="progress-bar-stepLabel">Ready to Go!</span>
+  </li>
+</ol>
+  
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <symbol id="checkmark-bold" viewBox="0 0 24 24">
+    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+  </symbol>
+</svg>
 
 
 	<div class="stretches-container">
@@ -22,7 +39,9 @@
 	
 		<div class="row">
 			<div class="col">
+
 		<form id="stretch-form" action="/go" method="get">
+
 			<ul class="stretch-list">
 			{{#each stretches}}
 				
@@ -62,12 +81,10 @@
 	<div class="pagination d-flex justify-content-between">
 
 			<button class="btn btn-primary back-button" type="button" onclick="window.location.href='/'">
-				<!--<p class="oi oi-arrow-left"></p> -->
 				Back
 			</button>
 
 			<button class="btn btn-primary forward-button confirm-stretches" {{#if loggedIn}}type="submit"{{/if}} {{#unless phone}}type="button" data-toggle="modal" data-target="#getPhone"{{/unless}}>
-				<!--<p class="oi oi-arrow-right"></p>-->
 				Start Stretching
 			</button>
 
@@ -85,19 +102,22 @@
 			      <div class="modal-body">
 			      	<p>
 			        Ergo sends alerts through SMS. Where can we reach you?</p>
-
+			        <p class="text-muted"><small>Ex: 5557779999</small></p>
+			        
 			        <form>
 
 			          <div class="form-group">
-			            <input type="number" placeholder="1234567890" class="form-control" id="recipient-name">
+			            <input type="number" class="form-control" id="phoneInput" required>
 			          </div>
 			
 			        </form>
 
+			        	<p class=" warning phoneInputWarning"></p>
+
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			        <button type="button" class="btn btn-primary">Go</button>
+			        <button type="button" class="btn btn-primary" onclick="enterPhone()">Go</button>
 			      </div>
 			    </div>
 			  </div>
@@ -106,7 +126,7 @@
 
 	</div>  <!-- .pagination -->
 
-	</form>
+	</form> <!-- #stretch-form -->
 
 </div> <!-- .container -->
 

@@ -11,15 +11,6 @@ function goBack() {
 	window.history.back();
 }
 
-function backToStretches() {
-	if (confirm("Are you sure? The timer will reset.")) 
-		goBack();
-	else
-		return;
-}
-
-
-
 function checkEmail(email) {
 	// Check that user completed fields
 	if (!email) {
@@ -109,7 +100,7 @@ function signup() {
 }
 
 function favorite() {
-	var name = prompt("Name for these settings:");
+	var name = prompt("Name for this routine:");
 
 	var queryString = location.href.split(location.host)[1];
 	//optionally removing the leading `/`
@@ -117,21 +108,34 @@ function favorite() {
 
 	$('.favName').val(name);
 	$('.favUrl').val(queryString);
-
+	
 	$('#fav-form').submit();
 }
 
-function loginWarning() {
-	alert("You must be logged in to save favorites.");
-}
-
-function getPhone() {
-	var phone = prompt("Ergo sends alerts through SMS. Where can we reach you?");
-	if (phone) {
-    	submit();
+function enterPhone() {
+	$('.phoneInputWarning').text("");
+	// Verify phone number
+	// Save to JSON
+	var phoneInput = $('#phoneInput').val();
+	if (phoneInput.length == 0) {
+		$('.phoneInputWarning').text("Must enter a phone number.");
+		return
 	}
-	else
+	else if (phoneInput.length != 9 && phoneInput.length != 10) {
+		$('.phoneInputWarning').text("Not a valid phone number.");
 		return;
+	}
+
+	var stretchForm = $("#stretch-form");
+	var url = stretchForm.attr('action') + "?" + stretchForm.serialize();
+	
+	var newPhone = {
+		"phone" : phoneInput
+	};
+	console.log(newPhone);
+	$.post(url, newPhone);
+
+	//$('#stretch-form').submit();
 }
 
 function sortStretches() {
@@ -260,6 +264,7 @@ var main = function () {
 		$('#startButton').show();
 		$('#pauseButton').hide();
 		$('#resetButton').hide();
+		$('#resumeButton').hide();
 	});
 	$('#restartButton').click(function () { Clock.restart(); });
 

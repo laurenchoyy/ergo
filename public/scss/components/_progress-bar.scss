@@ -1,25 +1,112 @@
+
+
+/**************/
+
+//Variables
+$gray: #eee;
+$blue: #00637C;
+$white: #DBF1FF;
+
+
+
+
 .progress-container {
-	width: 100%;
-	margin: 3rem 0;
-	height: .5rem;
+  width: 100%;
+  margin: 0 auto; 
+  border-bottom: .05rem solid #e5e5e5;
+  padding-bottom: 2.5rem;
+
 }
 
-.progress {
-	width: 20rem;
-	max-width: 80vw;
-	height: 1rem;
+.progressBar {
+  margin: 0 auto;
+  padding: 0 0 0rem;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  
+  margin-top: 1.2rem;
+  @media (min-width: 768px) {
+    margin-top: -0.8rem;
+  }
+  
 }
 
+.progress-bar-step {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  &:before,
+  &:after {
+    content: "";
+    height: 0.4em;
+    background-color: $gray;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .25s ease-out;
+  }
+  
+  &:first-child:before,
+  &:first-child:after { 
+    display: none; 
+  }
 
-#home-page .progress-bar {
-	width: 33.33%;
+  &:after {
+    background-color: $primary;
+    width: 0%;
+  }
+
+  &.is-complete + &.is-current:after,
+  &.is-complete + &.is-complete:after {
+    width: 100%;
+  }
 }
 
-#setup-page .progress-bar {
-	width: 66.66%;
+.progress-bar-icon {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: $gray;
+  fill: $gray;
+  border-radius: 50%;
+  margin-bottom: -.25rem;
+  padding: 0.4em;
+  max-width: 100%;
+  z-index: 10;
+  position: relative;
+  transition: all .25s ease-out;
+  
+  .is-current & {
+    fill: $primary;
+    background-color: $primary;
+  }
+  
+  .is-complete & {
+    fill: $white;
+    background-color: $primary;
+  }
 }
 
-#go-page .progress-bar {
-	width: 100%;
+.progress-bar-stepLabel {
+  display: block;
+  text-transform: uppercase;
+  font-size: .7rem;
+  color: #bbb;
+  position: absolute;
+  padding-top: 0.5em;
+  width: 100%;
+  transition: all .25s ease-out;
+  
+  //Add your breakpoint to turn off
+  //the labels when you need it.
+  
+  .is-current > &,
+  .is-complete > & {
+    color: #bbb;
+  }
 }
 

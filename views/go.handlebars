@@ -1,81 +1,166 @@
 {{#with data}}
 <div id="go-page">
+	
+	<div class="container">
 
 		<div class="progress-container">
-		<div class="d-flex justify-content-center">
-			<div class="progress">
-		 		<div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+			<ol class="progressBar">
+				<li class="progress-bar-step is-complete">
+				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				<span class="progress-bar-stepLabel">Choose Setting</span>
+				</li>
+				<li class="progress-bar-step is-complete">
+				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				<span class="progress-bar-stepLabel">Select Stretches</span>
+				</li>
+				<li class="progress-bar-step is-complete">
+				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				<span class="progress-bar-stepLabel">Ready to Go!</span>
+				</li>
+			</ol>
+		</div> <!-- progress-container -->
+
+		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+			<symbol id="checkmark-bold" viewBox="0 0 24 24">
+			<path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+			</symbol>
+		</svg>
+
+		<div class="row">
+			<div class="col text-center">
+				<p>Ergo will periodically notify you to stretch for as long as you are working. Press <span class="text-success">Start</span> when you are ready and <span class="text-danger">Stop</span> when you are done. </p><p class="text-muted">Note: Leaving this page will stop notifications.</p>
 			</div>
 		</div>
-	</div> <!-- #progress -->
-	
-		<div class="container">
 
-			<div class="row">
-				<div class="col text-center">
+		<div class="row">
+			<div class="col text-center">
+				
+				<div id="timer"><span id="min">00</span>:<span id="sec">00</span></div>
 
-					<form id="fav-form" {{#if loggedIn}}action="/save" method="get"{{/if}}>
+				<button id="startButton" class="btn btn-success btn-lg" type="button" value="Start">Start</button> 
 
-						<input class="favName" type="hidden" name="name" value="">
-						<input class="favUrl" type="hidden" name="url" value="">
-
-						<div class="fav-button" {{#if loggedIn}}onclick="favorite()"{{/if}} {{#unless loggedIn}}onclick="loginWarning()"{{/unless}}>
-							<h5>Save Routine to Favorites</h5>
-						</div>
+				<div class="btn-group controls" role="group" aria-label="...">
+					<button id="resumeButton" class="btn btn-secondary btn-lg" type="button" value="Resume"><span class="oi oi-media-play"></span></button>
+					<button id="pauseButton" class="btn btn-secondary btn-lg" type="button" value="Pause"><span class="oi oi-media-pause"></span></button>
 					
-					</form>
+				
+				<button id="resetButton" class="btn btn-danger btn-lg" type="button" value="Reset"><span class="oi oi-media-stop"></span></button>
+				<!--
+				<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button> -->
 				</div>
+
+
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col text-center">
-					
-					<div id="timer"><span id="min">00</span>:<span id="sec">00</span></div>
-
-					<button id="startButton" class="btn btn-success btn-lg" type="button" value="Start">Start</button> 
-
-					<div class="btn-group controls" role="group" aria-label="...">
-						<button id="resumeButton" class="btn btn-secondary btn-lg" type="button" value="Resume"><span class="oi oi-media-play"></span></button>
-						<button id="pauseButton" class="btn btn-secondary btn-lg" type="button" value="Pause"><span class="oi oi-media-pause"></span></button>
-						
-					
-					<button id="resetButton" class="btn btn-danger btn-lg" type="button" value="Reset"><span class="oi oi-media-stop"></span></button>
-					<!--
-					<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button> -->
-					</div>
-
-
+		<div class="row">
+			<div class="col text-center">
+				<div class="d-flex justify-content-center">
+				<div class="curr-stretch-img">
+					<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
 				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="d-flex justify-content-center">
-					<div class="curr-stretch-img">
-						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
-					</div>
-					</div>
-
 				</div>
+
 			</div>
+		</div>
 
-				<div class="pagination d-flex justify-content-between">
+		<!-- Save to favorites -->
+		<div class="row">
+			<div class="col text-center">
 
-			<button class="btn btn-primary back-button" type="button" onclick="backToStretches()">
-				<!--<p class="oi oi-arrow-left"></p> -->
+				<form id="fav-form" {{#if loggedIn}}action="/save-fav" method="get"{{/if}}>
+
+					<input class="favName" type="hidden" name="name" value="">
+					<input class="favUrl" type="hidden" name="url" value="">
+
+					<div class="fav-button" {{#if loggedIn}}onclick="favorite()"{{/if}} {{#unless loggedIn}}data-toggle="modal" data-target="#loginToSave"{{/unless}}>
+						<h5>Save Routine to Favorites</h5>
+					</div>
+				
+				</form> <!-- #fav-form -->
+			</div>
+		</div>
+
+		<div class="pagination d-flex justify-content-between">
+
+			<button class="btn btn-primary back-button" type="button" data-toggle="modal" data-target="#resetWarning">
 				Back
-			</button>
+			</button> 
 
 			<button class="btn btn-primary forward-button confirm-stretches" type="submit">
-				<!--<p class="oi oi-arrow-right"></p>-->
 				Next
 			</button>
 
-	</div>  <!-- .pagination -->
+		</div>  <!-- .pagination -->
 
+		<!-- Reset warning -->
+		<div id="resetWarning" class="modal fade">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Are you sure you want to leave?</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <p>You will stop receiving notifications.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" onclick="goBack()">Ok</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		      </div>
+		    </div>
+		  </div>
+		</div> <!-- .resetWarning -->
 
+		<!-- Log in to save favorites -->
+		<div id="loginToSave" class="modal fade">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">You must be logged in to save favorites.</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-footer">
+		      	<!--
+		        <button type="button" class="btn btn-primary" onclick="goBack()">Ok</button> -->
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+		      </div>
+		    </div>
+		  </div>
+		</div> <!-- #loginToSave -->
 
-		</div> <!-- .container -->
+		<!-- Save favorites -->
+		<div id="saveFav" class="modal fade">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">You must be logged in to save favorites.</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-footer">
+		      	<!--
+		        <button type="button" class="btn btn-primary" onclick="goBack()">Ok</button> -->
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+		      </div>
+		    </div>
+		  </div>
+		</div> <!-- #loginToSave -->
+
+	</div> <!-- .container -->
 	
 </div> <!-- #go-page -->
 {{/with}}
+
+<script>
+	$(window).bind('beforeunload', function(){
+		//return $('#resetWarning').modal('show');
+		//return 'Are you sure you want to leave?';
+	});
+</script>
 
