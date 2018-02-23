@@ -28,6 +28,10 @@
 
 		<div class="row">
 			<div class="col text-center">
+				<h2>Go</h2>
+				<!--
+				<h5>Sending alerts to <span class="active-phone"></span></h5> -->
+			
 				<p>Ergo will periodically notify you to stretch for as long as you are working. Press <span class="text-success">Start</span> when you are ready and <span class="text-danger">Stop</span> when you are done. </p><p class="text-muted">Note: Leaving this page will stop notifications.</p>
 			</div>
 		</div>
@@ -45,9 +49,7 @@
 					
 				
 				<button id="resetButton" class="btn btn-danger btn-lg" type="button" value="Reset"><span class="oi oi-media-stop"></span></button>
-				<!--
-				<button id="restartButton" class="btn btn-default" type="button" value="Restart">Restart</button> -->
-				</div>
+				</div> <!-- .controls -->
 
 
 			</div>
@@ -78,6 +80,12 @@
 					</div>
 				
 				</form> <!-- #fav-form -->
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col text-center" style="padding-bottom: 1rem">
+				<p>Copy and paste this URL to stretch with friends!</p>
 			</div>
 		</div>
 
@@ -157,10 +165,7 @@
 </div> <!-- #go-page -->
 {{/with}}
 
-<script>
-	$(window).bind('beforeunload', function(){
-		//return $('#resetWarning').modal('show');
-		//return 'Are you sure you want to leave?';
-	});
-</script>
+<!-- go.js -->
+<script src="js/go.js"></script>
+
 

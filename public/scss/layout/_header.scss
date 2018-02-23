@@ -25,6 +25,28 @@ $footer-height: 5rem;
 	}
 }
 
+#fb-name {
+	padding-right: 0.4rem;
+}
+
+.user-info {
+	display: inline-block;
+	
+	margin-top: -2rem;
+}
+
+.profile-pic-container {
+	margin-bottom: -0.9rem;
+	display: inline-block;
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 2.5rem;
+	overflow: hidden;
+	img {
+		max-width: 100%;
+	}
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */

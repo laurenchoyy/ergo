@@ -110,6 +110,23 @@ a {
 .navbar a {
   font-size: 1.5rem; }
 
+#fb-name {
+  padding-right: 0.4rem; }
+
+.user-info {
+  display: inline-block;
+  margin-top: -2rem; }
+
+.profile-pic-container {
+  margin-bottom: -0.9rem;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 2.5rem;
+  overflow: hidden; }
+  .profile-pic-container img {
+    max-width: 100%; }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -230,18 +247,13 @@ body {
 #login-page .row {
   margin: 2rem 0; }
 
-.login-form {
+.loginSignup {
   max-width: 40rem; }
-  .login-form .input-group {
-    margin: 2rem 0; }
+  .loginSignup .input-group {
+    margin: 1rem 0; }
 
 #login-page .row {
   margin: 2rem 0; }
-
-.login-form {
-  max-width: 40rem; }
-  .login-form .input-group {
-    margin: 2rem 0; }
 
 .why-phone {
   cursor: pointer; }

@@ -4,6 +4,7 @@
  */
 
 var data = require('../data.json');
+var user = require('../public/user.json');
 
 exports.login = function(req, res){
 
@@ -22,9 +23,8 @@ exports.login = function(req, res){
 		if (email == currUser.email) {
 				res.render('signup', {
 			  	data,
+			  	user,
 			  	"title" : "Sign Up | Ergo",
-			  	"hideTabs" : true,
-			  	"hideLogin" : true,
 			  	"signupError" : "Email address already belongs to an account."
 		 	 });
 			return;
@@ -44,6 +44,8 @@ exports.login = function(req, res){
 	data.phone = newUser.phone;
 	data.loggedIn = newUser;
 	data.users.push(newUser);
+
+	user["guest"] = false;
 
 	res.redirect('/');
 };

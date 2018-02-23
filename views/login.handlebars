@@ -7,21 +7,19 @@
 				<div class="col">
 					<div class="d-flex justify-content-center">
 
-					<form class="login-form" action="/verify-login">
+					<form id="login-form" class="loginSignup" action="/verify-login">
 					
 						<!-- Email -->
 						<div class="input-group input-group-lg">
 					  		<span class="input-group-addon" id="sizing-addon1">E-mail</span>
 					  		<input name="email" type="email" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" required>
 						</div>
-						<!-- <p class="email-warning warning"></p> -->
 
 						<!-- Password -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Password</span>
 							<input name="pwd" type="password" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
 						</div>
-						<!-- <p class="password-warning warning"></p> -->
 					
 						<!-- Submit -->
 						<button type="submit" onclick="login()"  class="btn btn-primary btn-block">Login</button>
@@ -36,6 +34,14 @@
 					</div>
 				</div> <!-- .col -->
 			</div> <!-- .row -->
+
+			<div class="row">
+				<div class="col toggleLoginSignup">
+					<h4>Log in through Facebook</h4>
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+					</fb:login-button>
+				</div>
+			</div>
 
 			<div class="row">
 				<div class="col toggleLoginSignup">

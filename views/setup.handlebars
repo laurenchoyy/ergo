@@ -84,13 +84,13 @@
 				Back
 			</button>
 
-			<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless phone}} onclick="confirmStretches()"{{/unless}}>
+			<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless loggedIn}} onclick="confirmStretches()"{{/unless}}>
 				Start Stretching
 			</button>
 
-			{{#unless phone}}
+			{{#unless loggedIn}}
 			<!-- Modal -->
-			<div class="modal fade" id="getPhone" tabindex="-1" role="dialog" aria-labelledby="getPhoneLabel" aria-hidden="true">
+			<div class="modal fade" id="getPhoneModal" tabindex="-1" role="dialog" aria-labelledby="getPhoneLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -102,7 +102,7 @@
 			      <div class="modal-body">
 			      	<p>
 			        Ergo sends alerts through SMS. Where can we reach you?</p>
-			        <p class="text-muted"><small>Ex: 5557779999</small></p>
+			        <p class="text-muted"><small>E.g. 5557779999</small></p>
 			        
 			        <form>
 
@@ -112,12 +112,12 @@
 			
 			        </form>
 
-			        	<p class=" warning phoneInputWarning"></p>
+			        	<p class="warning phoneInputWarning"></p>
 
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			        <button type="button" class="btn btn-primary" onclick="enterPhone()">Go</button>
+			        <button id="phoneSubmit" type="button" class="btn btn-primary" onclick="verifyGuestPhone()">Go</button>
 			      </div>
 			    </div>
 			  </div>

@@ -10,7 +10,7 @@ function hideWelcome() {
 function goBack() {
 	window.history.back();
 }
-
+/*
 function checkEmail(email) {
 	// Check that user completed fields
 	if (!email) {
@@ -36,45 +36,16 @@ function checkPhone(phone) {
 	return true;
 }
 
-/*
-function setup(className) {
-	
-
-
-	//var environment = $('.setup-input').val();
-	
-alert(className);
-	//$('.' + environment).addClass('selected');
-
-	$('.setup-form').submit();
-	 
-
-}
 */
 
 function login() {
-	// Clear warnings
-	$('.warning').text("");
+	// Get name
+	$('.profile-pic-container').hide();
+	$('#non-fb-name').show();
+	//localStorage.setItem("name", "Placeholder");
+  	localStorage.setItem("loggedIn", true);
 
-	var email = document.getElementsByName("email")[0].value;
-	var password = document.getElementsByName("password")[0].value;
-	
-	// Check inputed email and password
-	var validEmail = checkEmail(email);
-	var validPassword = checkPassword(password);
-
-	// Return if one or more inputs are valid
-	if (!validEmail || !validPassword)
-		return;
-
-	window.location.href = "/";
-}
-
-function logout() {
-	if (confirm("Log out?")) 
-		window.location.href = "/logout";
-	else
-		return;
+	$('#login-form').submit();
 }
 
 function signup() {
@@ -112,30 +83,38 @@ function favorite() {
 	$('#fav-form').submit();
 }
 
-function enterPhone() {
+/* Name: enterPhone
+ * Description: Called when not logged in. Verifies inputed phone number
+ * before saving it to the database.
+ * Parameters: None
+ * Return: None
+ */
+
+function verifyGuestPhone() {
+	// Reset warning
 	$('.phoneInputWarning').text("");
+
 	// Verify phone number
-	// Save to JSON
+
 	var phoneInput = $('#phoneInput').val();
+	// Return and show warning if input is empty
 	if (phoneInput.length == 0) {
 		$('.phoneInputWarning').text("Must enter a phone number.");
-		return
+		return;
 	}
+	// Return and show warning if input is not 9-10 digits
 	else if (phoneInput.length != 9 && phoneInput.length != 10) {
 		$('.phoneInputWarning').text("Not a valid phone number.");
 		return;
 	}
 
-	var stretchForm = $("#stretch-form");
-	var url = stretchForm.attr('action') + "?" + stretchForm.serialize();
-	
-	var newPhone = {
-		"phone" : phoneInput
-	};
-	console.log(newPhone);
-	$.post(url, newPhone);
+	//var stretchForm = $("#stretch-form");
+	//var url = stretchForm.attr('action') + "?" + stretchForm.serialize();
 
-	//$('#stretch-form').submit();
+	// Save guest phone
+	//sessionStorage.setItem('guestPhone', phoneInput);
+
+	$('#stretch-form').submit(); 
 }
 
 function sortStretches() {
@@ -153,15 +132,16 @@ function selectStretch(input) {
 		
 	// If stretch is selected, set value to 1 (true)
 	if (stretch.hasClass('selected')) {
-		stretch.find('.stretch-checkbox').val("1")
+		stretch.find('.stretch-checkbox').val("1");
 	}
 	// Otherwise, set to 0 (false)
 	else {
-		stretch.find('.stretch-checkbox').val("0")
+		stretch.find('.stretch-checkbox').val("0");
 	}
 }
 
 function confirmStretchesLoggedIn() {
+	console.log("confirm stretches logged in");
 	var empty = true;
 
 	// Submit form if at least one stretch is selected
@@ -182,6 +162,7 @@ function confirmStretchesLoggedIn() {
 }
 
 function confirmStretches() {
+	console.log("confirm stretches not logged in");
 	var empty = true;
 
 	// Submit form if at least one stretch is selected
@@ -197,7 +178,7 @@ function confirmStretches() {
 		return;
 	}
 	else {
-		$('#getPhone').modal('show');
+		$('#getPhoneModal').modal('show');
 	}
 }
 
@@ -207,6 +188,13 @@ function confirmStretches() {
 var main = function () {
 	// For development only
 	//localStorage.clear();
+
+	var loggedIn = localStorage.getItem("loggedIn");
+
+	if (localStorage.getItem("name")) {
+		$('#fb-name').text(localStorage.getItem("name"));
+		$('#profile-pic').attr("src", localStorage.getItem("profile-pic"));
+	}
 
 	/* Highlight active menu item */
   	var url = window.location.href;
@@ -250,6 +238,14 @@ var main = function () {
 
 	}); 
 */
+
+// Submitting a guest phone number with enter
+$('#phoneInput').on('click keypress', function(e) {
+	if (e.type == 'keypress' && e.keyCode == 13) {
+		e.preventDefault();
+        verifyGuestPhone();
+    }
+});
 
 	/* Timer */
 	var Clock = {

@@ -7,7 +7,7 @@
 				<div class="col">
 					<div class="d-flex justify-content-center">
 					
-					<form class="login-form" action="/verify-signup">
+					<form id="signup-form" class="loginSignup" action="/verify-signup">
 
 						<!-- First Name -->
 						<div class="input-group input-group-lg">
@@ -35,10 +35,11 @@
 				
 
 						<h5>Ergo sends alerts through SMS. Where can we reach you?</h5>
+						<small class="text-muted">E.g. 5557779999</small>
 						<!-- Phone -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Phone</span>
-							<input name="phone" type="number" class="form-control" placeholder="1234567890" aria-describedby="sizing-addon1" required>
+							<input name="phone" type="number" class="form-control" aria-describedby="sizing-addon1" required>
 						</div>
 
 			
@@ -55,6 +56,14 @@
 
 				</div> <!-- .col -->
 			</div> <!-- .row -->
+
+			<div class="row">
+				<div class="col toggleLoginSignup">
+					<h4>Log in through Facebook</h4>
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+					</fb:login-button>
+				</div>
+			</div>
 
 			<div class="row">
 				<div class="col toggleLoginSignup">

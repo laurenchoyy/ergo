@@ -4,12 +4,19 @@
  */
 
 var data = require('../data.json');
+var user = require('../public/user.json');
 
 exports.view = function(req, res){
 	// Clear todo queue
 	data.todo = [];
 
 	var selected = req.query;
+
+	// Redirect to home is queue is empty
+	if (!selected.length) {
+		//res.redirect('/');
+		//return;
+	}
 
 	for (var i in selected) {
 	
@@ -21,6 +28,7 @@ exports.view = function(req, res){
 
   res.render('go', {
   	data,
+  	user,
   	"title" : "Go! | Ergo"
   });
 };

@@ -60,6 +60,7 @@ app.get('/go', go.view);
 app.get('/favorites', favorites.view);
 app.get('/save-fav', saveFav.save);
 app.get('/login', login.view);
+app.get('/login/:id', login.fb);
 app.get('/logout', logout.logout);
 app.get('/verify-login', verifyLogin.login);
 app.get('/signup', signup.view);
