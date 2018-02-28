@@ -31,7 +31,6 @@ body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
@@ -367,7 +366,25 @@ body {
 #fav-form {
   margin-right: 2rem; }
 
-.fav-button {
+#fav-form-submit {
   cursor: pointer; }
+
+.favorites-list {
+  list-style: none;
+  padding: 0; }
+  .favorites-list li {
+    padding: 1.3rem 0 1rem;
+    border-bottom: .05rem solid #e5e5e5; }
+
+.fav-options {
+  display: none;
+  margin-left: 1rem;
+  color: #007AFF; }
+  .fav-options span {
+    padding: 0 0.2rem; }
+
+.edit-button {
+  cursor: pointer;
+  user-select: none; }
 
 /*# sourceMappingURL=main.css.map */

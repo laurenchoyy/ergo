@@ -1,4 +1,32 @@
+/*
+ * File: go.js
+ * Description: Javascript for the Go page.
+ */
+
+/* Name: savFav
+ * Description: Uses POST to save a routine as a favorite.
+ * Parameters: None
+ * Return None
+ */
+function saveFav() {
+	// Get name and current url
+	var name = prompt("Name this routine:");
+	var queryString = location.href.split(location.host)[1];
+
+	$('.fav-name').val(name);
+	$('.fav-url').val(queryString);
+
+    $.post('/save-fav', $('#fav-form').serialize(), function(data) {
+   	});  
+}
+
+/*
+ * Main function
+ */
 var main = function () {
+	$('#fav-form-submit').click(function() {
+		saveFav();
+	});
 /*
 	var isGuest = $.getJSON('user.json', function(user) {
 		console.log(user["guest"]);

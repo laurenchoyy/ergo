@@ -17,10 +17,9 @@ var setup = require('./routes/setup');
 var ready = require('./routes/ready');
 var go = require('./routes/go');
 var favorites = require('./routes/favorites');
-var saveFav = require('./routes/save-fav');
+//var saveFav = require('./routes/save-fav');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
-var verifyLogin = require('./routes/verify-login');
 var signup = require('./routes/signup');
 var verifySignup = require('./routes/verify-signup');
 var savePhone = require('./routes/save-phone');
@@ -58,11 +57,15 @@ app.get('/setup', setup.view);
 app.get('/ready', ready.view);
 app.get('/go', go.view);
 app.get('/favorites', favorites.view);
-app.get('/save-fav', saveFav.save);
+
+app.post('/save-fav', favorites.save);
+app.post('/delete-fav', favorites.delete);
+
+
 app.get('/login', login.view);
 app.get('/login/:id', login.fb);
 app.get('/logout', logout.logout);
-app.get('/verify-login', verifyLogin.login);
+app.get('/verify-login', login.login);
 app.get('/signup', signup.view);
 app.get('/verify-signup', verifySignup.login);
 app.get('/save-phone', savePhone.save);

@@ -1,5 +1,6 @@
 /*
  * main.js
+ * Description: Main javascript.
  */
 
 function hideWelcome() {
@@ -10,33 +11,6 @@ function hideWelcome() {
 function goBack() {
 	window.history.back();
 }
-/*
-function checkEmail(email) {
-	// Check that user completed fields
-	if (!email) {
-		$('.email-warning').text("Must enter an e-mail address.");
-		return false;
-	}
-	return true;
-}
-
-function checkPassword(password) {
-	if (!password) {
-		$('.password-warning').text("Must enter a password.");
-		return false;
-	}
-	return true;
-}
-
-function checkPhone(phone) {
-	if (!phone) {
-		$('.phone-warning').text("Must enter a phone number.");
-		return false;
-	}
-	return true;
-}
-
-*/
 
 function login() {
 	// Get name
@@ -70,18 +44,6 @@ function signup() {
 	window.location.href = "/";
 }
 
-function favorite() {
-	var name = prompt("Name for this routine:");
-
-	var queryString = location.href.split(location.host)[1];
-	//optionally removing the leading `/`
-	//var queryString = location.href.split(location.host)[1].replace(/^\//,'');
-
-	$('.favName').val(name);
-	$('.favUrl').val(queryString);
-	
-	$('#fav-form').submit();
-}
 
 /* Name: enterPhone
  * Description: Called when not logged in. Verifies inputed phone number
@@ -238,6 +200,8 @@ var main = function () {
 
 	}); 
 */
+
+
 
 // Submitting a guest phone number with enter
 $('#phoneInput').on('click keypress', function(e) {

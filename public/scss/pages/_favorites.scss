@@ -2,6 +2,33 @@
 margin-right: 2rem;
 }
 
-.fav-button {
+#fav-form-submit {
 	cursor: pointer;
+}
+
+.favorites-list {
+	list-style: none;
+	padding: 0;
+	li {
+		padding: 1.3rem 0 1rem;
+		border-bottom: .05rem solid #e5e5e5;
+	}
+}
+
+.expand-fav {
+	//color: $primary;
+}
+
+.fav-options {
+	display: none;
+	margin-left: 1rem;
+	color: $primary;
+	span {
+		padding: 0 0.2rem;
+	}
+}
+
+.edit-button {
+	cursor: pointer;
+	user-select: none;
 }

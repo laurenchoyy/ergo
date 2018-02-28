@@ -7,27 +7,54 @@
 					<h2>Favorites</h2>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col text-right text-primary">
+					<p class="edit-button">Edit</p>
+				</div>
+			</div>
 
+			<!-- Ask user to log in/sign up if needed-->
 			<div class="row">
 				{{#unless loggedIn}}
 				<div class="col">
-					<h4><a href="/login">Login</a> or <a href="/signup">Sign Up</a> to save your favorite stretches!</h4>
+					<h4><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to save your favorite stretch routines!</h4>
 				</div>
 				{{/unless}}
 			</div>
 
+			<!-- List of favorites -->
 			{{#if loggedIn}}
 			<div class="row">
-				{{#each loggedIn.favorites}}
 				<div class="col-12">
-					<h4><a href="{{url}}">{{name}}</a></h4>
+					<ul class="favorites-list">
+			
+					{{#each loggedIn.favorites}}
+						<li class="favorite d-flex justify-content-between">
+							<h5><a class="fav-link" href="{{url}}">{{name}}</a></h5>
+							<span>
+								<span class="oi oi-chevron-bottom expand-fav"></span>
+
+								<span class="fav-options">
+									<span class="oi oi-pencil edit-fav"></span>
+									<span class="oi oi-trash delete-fav"></span>
+								</span>
+							</span>
+
+							
+						</li>
+
+					{{/each}}
+			
+					</ul> <!-- /.favorites-list -->
 				</div>
-				{{/each}}
-			</div>
+			</div> <!-- /.row -->
 			{{/if}}
 
-		</div>
-	</div>
-</div>
+		</div> <!-- /.container -->
+	</div> <!-- /#favorites -->
+</div> <!-- /#favorites-page -->
 {{/with}}
+
+<!-- fav.js -->
+<script src="js/fav.js"></script>
 

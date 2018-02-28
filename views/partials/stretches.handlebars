@@ -1,0 +1,21 @@
+<li class="stretch {{#if active}}selected{{/if}}">
+	<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="{{#if active}}1{{/if}}{{#unless active}}0{{/unless}}">
+	<!-- Icon -->
+	<div class="stretch-image">
+		<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+	</div> <!-- .stretch-image -->
+
+	<!-- Info -->
+	<div class="stretch-info">
+		<p class="text-primary"><strong>{{title}}</strong></p>
+		<p><i>{{target}} • {{time}}</i></p>
+	</div> <!-- .stretch-info -->
+
+	<!-- Expand button -->
+	<div class="expand-stretch">
+		<span class="oi chevron oi-chevron-bottom"></span>
+	</div> <!-- .expand-stretch -->
+
+	<!-- Description -->
+	<p class="stretch-desc text-muted">{{{description}}}</p>
+</li>
