@@ -122,6 +122,56 @@
 				"office", "home", "indoor", "outdoor"
 			]
 		}
+		{
+			"title" : "Step Ups",
+			"target" : "Legs",
+			"time" : "30 sec",
+			"description" : "Place your right foot on the elevated platform. <br>Step on the platform by extending your right hip and knee. <br>Use your heel to lift your body up, and place your left foot on the platform as well. <br>Step down. <br>Repeat each side 5 times.",
+			"active" : false,
+			"tags" : [
+				"home", "outdoor"
+			]
+		}
+		{
+			"title" : "Take a Walk",
+			"target" : "Full-body",
+			"time" : "5 min",
+			"description" : "Get up and walk around your area. <br>Enjoy your surroundings!",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		}
+		{
+			"title" : "Hamstring Stretch",
+			"target" : "Back of legs",
+			"time" : "30 sec",
+			"description" : "Stand five feet away from a stable object that is taller than you (wall or tree). <br>Step the sole of your right foot at hip level onto the object. <br>If your hamstring is tight, lower your foot, if you are flexible, raise your foot. <br>Keep both legs straight as you gently fold forward, resting your hands on your thigh, knee, or shin.",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		}
+		{
+			"title" : "Hip and Shoulder Stretch",
+			"target" : "Hips, chest, shoulders",
+			"time" : "30 sec",
+			"description" : "Stand five feet away from the object. <br>Step the sole of your right foot slightly higher than hip level onto the tree. <br>Once you feel stable, interlace your hands behind you in a double fist. <br>Lean forward, lifting your arms as high as you can. <br>Switch legs.",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		}
+		{
+			"title" : "Spinal Twist",
+			"target" : "Spine, back",
+			"time" : "30 sec",
+			"description" : "Stand a foot in front of the object. <br>Keep your right leg straight and bend your left knee, placing your outer knee against the bark. <br>Turn to the left, bend your right elbow, and place your right hand around the trunk. <br>Keep your spine long and rest your left hand on your hip.",
+			"active" : false,
+			"tags" : [
+				"outdoor", "home"
+			]
+		}
 	], 
 	"todo" : [
 	],
